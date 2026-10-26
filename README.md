@@ -10,6 +10,8 @@
 
 ---
 
+<img width="1000" height="500" alt="Screenshot 2026-10-26 180128" src="https://github.com/user-attachments/assets/fa82ddb3-0515-4ab7-a217-97714a0196a1" />
+
 ## 🧭 Project Architecture & System Philosophy
 
 Civil aviation is not a collection of independent disciplines. An airliner can be mechanically airworthy yet unable to push back due to crew flight duty period (FDP) limits, convective weather along the SID, an unassigned stand, baggage security reconciliation holds, or an Air Traffic Flow Management (ATFM) departure slot.
