@@ -151,7 +151,7 @@ python notebooklm_studio.py --week 4
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/365-days-of-aviation.git
+   git clone https://github.com/SDMCNS/365-days-of-aviation.git
    cd 365-days-of-aviation
    ```
 
