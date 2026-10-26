@@ -1,0 +1,42 @@
+graph TD
+    subgraph Aeronautical_Information_Sources["1. Aeronautical Data Feeds"]
+        MET["Weather: METAR / TAF / SIGMET (Annex 3)"]
+        NOTAM["NOTAM Office: Aerodrome & Nav Hazards (Annex 15)"]
+        AIP["AIP / Charting: Waypoints, Airways, SIDs/STARs"]
+    end
+
+    subgraph Airline_Operational_Control["2. Airline OCC Flight Dispatch"]
+        DISP["Flight Dispatcher & Navigation Planning"]
+        OFP["Operational Flight Plan (OFP): Fuel Reserves & Route"]
+        LOAD["Weight & Balance Trim / Loadsheet"]
+    end
+
+    subgraph Global_Network_Infrastructure["3. Telecommunications & Air Traffic Management"]
+        AFTN["AFTN / AMHS Global Message Network"]
+        IFPS["Eurocontrol IFPS / FAA Host Computer"]
+        ATFM["Flow Management: CTOT Departure Slots"]
+        TWR["Aerodrome Control Tower (ATC)"]
+    end
+
+    subgraph Cockpit_Execution["4. Flight Deck Systems"]
+        FMC["Flight Management Computer (FMC)"]
+        CPDLC["CPDLC / DCL Data Link (Air-Ground)"]
+        TECHLOG["Aircraft Technical Log Acceptance"]
+    end
+
+    MET --> DISP
+    NOTAM --> DISP
+    AIP --> DISP
+
+    DISP --> OFP
+    OFP --> AFTN
+    AFTN --> IFPS
+    IFPS -->|ACK / REJ| DISP
+    IFPS --> ATFM
+    ATFM -->|CTOT Slot Allocation| TWR
+    TWR --> CPDLC
+
+    OFP --> FMC
+    LOAD --> FMC
+    TECHLOG --> FMC
+    CPDLC -->|Departure Clearance DCL| FMC

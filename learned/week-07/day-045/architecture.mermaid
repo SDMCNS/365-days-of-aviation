@@ -1,0 +1,18 @@
+flowchart LR
+    subgraph Airworthiness_Cycle["Continuing Airworthiness & Flight Physics"]
+        CS25["EASA CS-25 Design Specs"] --> TC["Type Certificate (Part-21)"]
+        TC --> AMP["Aircraft Maintenance Programme (AMP)"]
+        AMP --> CAMO["CAMO Airworthiness Review (Part-M)"]
+        CAMO --> CRS["Certificate of Release to Service (Part-145)"]
+        CRS --> TECHLOG["Aircraft Technical Logbook"]
+        TECHLOG --> DISPATCH["Flight Dispatch & Crew Acceptance"]
+    end
+
+    subgraph Forces["4 Aerodynamic Forces"]
+        LIFT["Lift: 0.5 * rho * V^2 * S * CL"]
+        WEIGHT["Weight: Mass * Gravity"]
+        THRUST["Thrust: Turbofan Net Force"]
+        DRAG["Drag: Parasite + Induced"]
+        LIFT <--> WEIGHT
+        THRUST <--> DRAG
+    end

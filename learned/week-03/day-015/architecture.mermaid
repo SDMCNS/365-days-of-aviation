@@ -1,0 +1,58 @@
+graph TD
+    subgraph EU_Legislative["1. Primary Legislation (Brussels / Strasbourg)"]
+        PARL["European Parliament"]
+        COUNCIL["Council of the European Union"]
+        BR["Regulation (EU) 2018/1139 (EASA Basic Regulation)"]
+        
+        PARL --> BR
+        COUNCIL --> BR
+    end
+
+    subgraph EU_Executive["2. Executive Rulemaking & Comitology"]
+        COMMISSION["European Commission (DG MOVE)"]
+        IR["Delegated & Implementing Regulations (Hard Law)"]
+        
+        BR --> COMMISSION
+        COMMISSION --> IR
+    end
+
+    subgraph Technical_Agency["3. EASA: European Union Aviation Safety Agency (Cologne)"]
+        EASA["EASA Executive Directorate"]
+        OPINIONS["Draft Opinions for Rulemaking"]
+        SOFT_LAW["Soft Law: CS (Certification Specs), AMC & GM"]
+        DIRECT_CERT["Direct Centralized Certification: Type Certificates & Part-TCO"]
+        STD_AUDIT["Standardisation Oversight (Reg 628/2013)"]
+        
+        BR --> EASA
+        EASA --> OPINIONS
+        OPINIONS --> COMMISSION
+        EASA --> SOFT_LAW
+        EASA --> DIRECT_CERT
+        EASA --> STD_AUDIT
+    end
+
+    subgraph National_Authorities["4. National Competent Authorities (NCAs)"]
+        NCA["NCAs (DGAC France, LBA Germany, AESA Spain, ENAC Italy)"]
+        AOC["Air Operator Certificates (Part-CAT)"]
+        CAMO["Continuing Airworthiness (Part-M / Part-145)"]
+        FCL["Flight Crew Licensing (Part-FCL)"]
+        ADR["Aerodrome Certification (ADR)"]
+        
+        IR --> NCA
+        SOFT_LAW -.-> NCA
+        STD_AUDIT -->|Audits & Findings (Class C, D, G)| NCA
+        NCA --> AOC
+        NCA --> CAMO
+        NCA --> FCL
+        NCA --> ADR
+    end
+
+    subgraph Mutual_Recognition["5. Internal Market & Mutual Recognition"]
+        MKT["Single European Aviation Market (Article 67 Mutual Recognition)"]
+        SAFEGUARD["Article 70 Safeguard Clause / ECJ Infringement"]
+        
+        AOC --> MKT
+        FCL --> MKT
+        CAMO --> MKT
+        STD_AUDIT -.->|If SCI < 70% or Class G Unresolved| SAFEGUARD
+    end

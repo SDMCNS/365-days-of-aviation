@@ -1,0 +1,13 @@
+flowchart TD
+    PAX["Arriving Passenger at Terminal"] --> CHK["Check-in & Bag Drop (IATA 753)"]
+    CHK -->|Bag Tag RFID| BHS["Baggage Handling System & EBS"]
+    BHS --> XRAY_BAG["100% Hold Baggage Security Screening"]
+    XRAY_BAG --> MAKEUP["Baggage Make-up & ULD Loading"]
+    
+    CHK --> SEC["Central Security Passenger Screening"]
+    SEC --> BORDER["Border Control & EES / Schengen Check"]
+    BORDER --> AIRSIDE["Airside Departures Concourse & Gates"]
+    AIRSIDE --> GATE["Boarding Gate & Identity Verification"]
+    
+    MAKEUP --> RAMP["Ramp Delivery to Aircraft Hold"]
+    GATE --> AC["Aircraft Cabin Seating"]

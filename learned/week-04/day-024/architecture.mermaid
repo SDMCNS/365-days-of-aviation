@@ -1,0 +1,60 @@
+graph TD
+    classDef external fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef register fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef field fill:#1f2937,stroke:#4b5563,stroke-width:1px,color:#ffffff;
+    classDef internal fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+    classDef audit fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph ExternalFeeds["Inbound Regulatory Intelligence Feeds"]
+        EURLEX["Official Journal of the EU (Eur-Lex)<br/>• Regulations, Directives, Delegated Acts"]:::external
+        EASAFEED["EASA Rulemaking & ED Decisions<br/>• Easy Access Rules, CS, AMC, GM, SIBs"]:::external
+        ICAOFEED["ICAO State Letters & Annex Updates"]:::external
+        NAAFEED["National Authority AIP & AICs"]:::external
+    end
+
+    subgraph SourceRegister["Enterprise Regulatory Source Register (ORO.GEN.200)"]
+        REG_CORE["Master Compliance Inventory Database"]:::register
+        F1["1. Document Title & Description"]:::field
+        F2["2. Legal Identifier (e.g. Reg 965/2012)"]:::field
+        F3["3. Amendment State & OJ Reference"]:::field
+        F4["4. Effective, In-Force & Transition Dates"]:::field
+        F5["5. Status: Active / In-Transition / Superseded"]:::field
+        F6["6. Operational Scope & Applicable Fleets"]:::field
+    end
+
+    subgraph InternalOps["Company Operational Traceability"]
+        OMA["Operations Manual Part A (General / Fuel / FTL)"]:::internal
+        OMB["Operations Manual Part B (Aircraft Systems / AFM)"]:::internal
+        CAME["Continuing Airworthiness Mgmt Exposition (CAME)"]:::internal
+        MOE["Maintenance Organisation Exposition (Part-145)"]:::internal
+        POSTHOLDERS["Nominated Persons (Flight Ops, CAMO, Training)"]:::internal
+    end
+
+    subgraph OversightAudits["Compliance Monitoring & Oversight"]
+        INT_AUDIT["Internal Compliance Monitoring Audits (12-Month Plan)"]:::audit
+        NAA_AUDIT["National Authority (NAA) Oversight Audits"]:::audit
+        SAFA["EC SAFA / SACA Ramp Inspections"]:::audit
+    end
+
+    EURLEX --> REG_CORE
+    EASAFEED --> REG_CORE
+    ICAOFEED --> REG_CORE
+    NAAFEED --> REG_CORE
+
+    REG_CORE --- F1
+    REG_CORE --- F2
+    REG_CORE --- F3
+    REG_CORE --- F4
+    REG_CORE --- F5
+    REG_CORE --- F6
+
+    REG_CORE ==>|Maps Requirements to| OMA
+    REG_CORE ==>|Maps Systems to| OMB
+    REG_CORE ==>|Maps Airworthiness to| CAME
+    REG_CORE ==>|Maps Maintenance to| MOE
+    REG_CORE ==>|Assigns Responsibility to| POSTHOLDERS
+
+    OMA --> INT_AUDIT
+    CAME --> INT_AUDIT
+    INT_AUDIT --> NAA_AUDIT
+    OMA --> SAFA

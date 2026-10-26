@@ -1,0 +1,33 @@
+graph TD
+    subgraph Commercial_Objectives["Commercial Value Drivers"]
+        C1["Maximize Passenger Yield<br/>(100% Seat Load Factor)"]
+        C2["Belly Cargo Maximization<br/>(High-Yield Freight)"]
+        C3["Economic Fuel Tankering<br/>(Exploit Price Differentials)"]
+        C4["High Fleet Utilization<br/>(12-14 Block Hours / Day)"]
+    end
+
+    subgraph Physical_Structural_Gates["Aircraft Structural Constraints (CS-25)"]
+        S1["Maximum Zero Fuel Mass (MZFM)<br/>Wing Root Bending Moment Limit"]
+        S2["Maximum Take-Off Mass (MTOM)<br/>Tire Speed & Structural Limit"]
+        S3["Maximum Landing Mass (MLM)<br/>Landing Gear Impact Energy Limit"]
+    end
+
+    subgraph Regulatory_Operational_Gates["Regulatory & Operating Envelopes"]
+        R1["Mandatory Fuel Reserves<br/>(ICAO Annex 6 / EASA CAT.OP)"]
+        R2["Flight Duty Periods (FDP)<br/>(EASA Part-ORO.FTL Fatigue Cap)"]
+        R3["Environmental Night Curfews<br/>(Local Airport Operating By-laws)"]
+        R4["Passenger Rights Liability<br/>(Regulation EC 261/2004)"]
+    end
+
+    C1 & C2 -->|Total Payload Demand| S1
+    S1 -->|OEW + Payload| S2
+    C3 -->|Tankered Fuel Mass| S2
+    R1 -->|Statutory Block Fuel| S2
+    S2 -->|TOW - Mission Fuel Burn| S3
+    
+    C4 -->|Tight Turnaround Waves| R2
+    R2 -->|Delayed Departures| R3
+    R3 -->|Diversion & Missed Curfew| R4
+    R4 -->|Massive Cash Compensation| Commercial_Objectives
+    S3 -.->|If Exceeded: Force Offload| C2
+    S3 -.->|If Exceeded: Cap Tankering| C3

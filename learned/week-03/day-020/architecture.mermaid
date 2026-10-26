@@ -1,0 +1,47 @@
+graph TD
+    subgraph Tier1_ICAO["Tier 1: Global International Baseline (ICAO)"]
+        ICAO["ICAO Doc 7300 & Annexes 1-19"]
+        AIRCRAFT_COA["Annex 8: Aircraft Airworthiness Passport"]
+        CREW_LIC["Annex 1: Personnel Licensing Baselines"]
+        NOISE_ANNEX16["Annex 16: Environmental Protection & Noise Certification"]
+        
+        ICAO --> AIRCRAFT_COA
+        ICAO --> CREW_LIC
+        ICAO --> NOISE_ANNEX16
+    end
+
+    subgraph Tier2_EASA["Tier 2: Regional Harmonisation (EASA / EU)"]
+        REG_AIR_OPS["Regulation (EU) 965/2012 (Air Ops)"]
+        PART_CAT["Part-CAT: 1.67x Dry Runway Stopping Margin"]
+        PART_SPA["Part-SPA: Steep Approach Approval (SPA.SPA.100)"]
+        PART_FTL["Part-ORO.FTL: Flight Duty Period Limits"]
+        
+        REG_AIR_OPS --> PART_CAT
+        REG_AIR_OPS --> PART_SPA
+        REG_AIR_OPS --> PART_FTL
+    end
+
+    subgraph Tier3_Local["Tier 3: Local Operating Arrangements (AIP AD 2)"]
+        AIP["National Aeronautical Information Publication (AIP)"]
+        CURFEW["Local Municipal Curfew (Night Ban 23:00–05:00 / Sat 12:30 UTC)"]
+        OBSTACLE_GLIDEPATH["Steep Glidepath (5.5° Glideslope at London City)"]
+        RUNWAY_LDA["Physical Runway Length (e.g. LDA = 1,199 m)"]
+        
+        AIP --> CURFEW
+        AIP --> OBSTACLE_GLIDEPATH
+        AIP --> RUNWAY_LDA
+    end
+
+    subgraph Feasibility_Intersection["Operational Feasibility Intersection"]
+        DISPATCH["Operational Dispatch Clearance (OFP)"]
+        REJECT["Flight Prohibited / Diversion to Alternate Required"]
+        
+        AIRCRAFT_COA --> DISPATCH
+        PART_CAT --> DISPATCH
+        PART_SPA --> DISPATCH
+        RUNWAY_LDA --> DISPATCH
+        CURFEW --> DISPATCH
+        
+        PART_CAT -.->|Margin < 0| REJECT
+        CURFEW -.->|Arrival > Curfew Cutoff| REJECT
+    end

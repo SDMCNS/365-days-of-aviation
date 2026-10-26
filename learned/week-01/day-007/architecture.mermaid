@@ -1,0 +1,34 @@
+graph TD
+    subgraph Technical_Domain["Technical Terminology (Aviation Jargon)"]
+        J1["AOC (Air Operator Certificate)"]
+        J2["A-CDM (Airport CDM)"]
+        J3["CTOT (Calculated Take-Off Time)"]
+        J4["MEL (Minimum Equipment List)"]
+        J5["FTL (Flight Time Limitations)"]
+        J6["RVR (Runway Visual Range)"]
+    end
+
+    subgraph Plain_Language["Plain English Operational Reality"]
+        P1["Airline Commercial Operating License"]
+        P2["Airport-Airline-ATC Shared Departure Coordination"]
+        P3["Air Traffic Control Takeoff Appointment Slot"]
+        P4["Certified Relief List for Minor Broken Parts"]
+        P5["Mandatory Pilot Fatigue & Working Hour Caps"]
+        P6["Cockpit Visual Sight Distance in Fog/Snow"]
+    end
+
+    subgraph Real_World_Impact["Real-World Operational & Consumer Impact"]
+        I1["Grounds the Airline if Revoked"]
+        I2["Eliminates Apron Gridlock & Wasted Taxi Fuel"]
+        I3["Prevents Mid-Air Congestion & Airborne Holding"]
+        I4["Prevents Flight Cancellations for Non-Safety Defects"]
+        I5["Halts Flights if Pilots Time Out (Safety Priority)"]
+        I6["Forces Missed Approaches or Diversions in Fog"]
+    end
+
+    J1 -->|Translates to| P1 -->|Enforces| I1
+    J2 -->|Translates to| P2 -->|Enforces| I2
+    J3 -->|Translates to| P3 -->|Enforces| I3
+    J4 -->|Translates to| P4 -->|Enforces| I4
+    J5 -->|Translates to| P5 -->|Enforces| I5
+    J6 -->|Translates to| P6 -->|Enforces| I6

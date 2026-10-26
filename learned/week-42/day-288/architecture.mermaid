@@ -1,0 +1,16 @@
+graph TD
+    subgraph SMS_Four_Pillars["ICAO Annex 19: Four Pillars of Safety Management"]
+        P1["1. Safety Policy & Objectives"]
+        P2["2. Safety Risk Management (SRM)"]
+        P3["3. Safety Assurance (SA)"]
+        P4["4. Safety Promotion & Just Culture"]
+    end
+
+    HAZARD["Identified Hazard / Incident"] --> P2
+    P2 --> RISK_ASSESS["Risk Assessment: Likelihood x Severity"]
+    RISK_ASSESS --> CONTROLS["Implement Mitigations & Barriers"]
+    CONTROLS --> P3
+    P3 --> FDM["Flight Data Monitoring (FDM) Audits"]
+    FDM --> P4
+    P4 --> REPORTING["Mandatory & Voluntary Occurrence Reporting (EU 376/2014)"]
+    REPORTING --> HAZARD

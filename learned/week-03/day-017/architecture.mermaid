@@ -1,0 +1,50 @@
+graph TD
+    subgraph Dimension1_Source["1. Statutory Source (EU & International Law)"]
+        EU_REG["Regulation (EU) 965/2012 / Reg 1321/2014"]
+        IR_ARTICLE["Implementing Rule Article (e.g. CAT.OP.MPA.181 Fuel Scheme)"]
+        AMC["Acceptable Means of Compliance (AMC1)"]
+        
+        EU_REG --> IR_ARTICLE
+        IR_ARTICLE --> AMC
+    end
+
+    subgraph Dimension2_Authority["2. Responsible Authority"]
+        EASA["EASA (Rulemaking & Standardisation)"]
+        NCA["National Competent Authority (DGAC / LBA / CAA)"]
+        OVERSIGHT["Continuous Oversight Programme (Part-ARO)"]
+        
+        AMC --> NCA
+        EASA --> NCA
+        NCA --> OVERSIGHT
+    end
+
+    subgraph Dimension3_Organisation["3. Regulated Organisation"]
+        AOC["AOC Holder (Commercial Airline)"]
+        ACC_MGR["Accountable Manager & Nominated Postholders"]
+        COMPLIANCE_MGR["Compliance Monitoring Manager (CMS)"]
+        
+        OVERSIGHT --> AOC
+        AOC --> ACC_MGR
+        ACC_MGR --> COMPLIANCE_MGR
+    end
+
+    subgraph Dimension4_Procedure["4. Documented Internal Procedures"]
+        OM_A["Operations Manual Part A: Policy & Standards"]
+        SOP["Standard Operating Procedure (SOP): Dispatch & Flight Crew"]
+        
+        COMPLIANCE_MGR --> OM_A
+        OM_A --> SOP
+    end
+
+    subgraph Dimension5_Evidence["5. Verifiable Evidence Artifact"]
+        OFP["Signed Operational Flight Plan (OFP)"]
+        ATL["Aircraft Technical Logbook (ATL) Fuel Page"]
+        FDM["Flight Data Monitoring (FDM) Digital Log"]
+        
+        SOP --> OFP
+        SOP --> ATL
+        SOP --> FDM
+    end
+
+    OVERSIGHT -.->|Audit Sampling of Evidence| OFP
+    OVERSIGHT -.->|Audit Verification of Log| ATL

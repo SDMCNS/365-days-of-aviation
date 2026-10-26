@@ -1,0 +1,44 @@
+graph TD
+    subgraph Regulatory_Oversight["1. Statutory Oversight & Certifications"]
+        ICAO["ICAO: Annexes 6, 11, 14, 17"]
+        EASA["EASA / NAA: AOC, Part-ADR, Part-ATM/ANS"]
+    end
+
+    subgraph Airport_CDM_Platform["2. Airport Collaborative Decision Making (A-CDM)"]
+        AOC["Airline OCC (Operational Control)"]
+        APT["Aerodrome Stand & Ramp Management"]
+        ATC["ATC / Tower / Flow Management (NMOC)"]
+        GH["Ground Handling & Into-Plane Fueling"]
+    end
+
+    subgraph Turnaround_Critical_Path["3. Parallel Aircraft Turnaround Chains"]
+        PAX["Passenger Chain: Deboard → Clean → Board"]
+        BAG["Baggage Chain: Offload → Security Screen → Load"]
+        FUEL["Fuel Chain: Ground Bonding → Uplift → Tech Log"]
+        LOAD["Dispatch: Final Headcount + Weight & Balance Trim"]
+    end
+
+    subgraph Flight_Departure_Gate["4. Coordinated Release Milestones"]
+        TOBT["TOBT: Target Off-Block Time (AOC/GH)"]
+        TSAT["TSAT: Target Start-Up Time (ATC)"]
+        CTOT["CTOT: Calculated Take-Off Time (ATFM Slot)"]
+    end
+
+    ICAO --> EASA
+    EASA --> AOC
+    EASA --> APT
+    EASA --> ATC
+
+    AOC <-->|Flight Status & Delays| Airport_CDM_Platform
+    APT <-->|Stand Alloc & RWYCC| Airport_CDM_Platform
+    ATC <-->|Taxi Sequencing & Slots| Airport_CDM_Platform
+    GH <-->|Milestone Updates| Airport_CDM_Platform
+
+    Airport_CDM_Platform --> Turnaround_Critical_Path
+    PAX --> LOAD
+    BAG --> LOAD
+    FUEL --> LOAD
+
+    LOAD --> TOBT
+    TOBT --> TSAT
+    TSAT --> CTOT

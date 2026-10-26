@@ -1,0 +1,45 @@
+graph TD
+    subgraph EU_Law["1. European Primary & Implementing Rules"]
+        TFEU_288["TFEU Article 288: Direct Applicability"]
+        BASIC_REG["Regulation (EU) 2018/1139: Basic Regulation"]
+        AIR_OPS["Regulation (EU) 965/2012: Air Operations (Air Ops)"]
+        
+        TFEU_288 --> BASIC_REG
+        BASIC_REG --> AIR_OPS
+    end
+
+    subgraph Authority_Requirements["2. Authority Oversight: Part-ARO"]
+        ARO_GEN_300["ARO.GEN.300: Oversight Programme"]
+        ARO_GEN_305["ARO.GEN.305: Risk-Based Oversight Cycle (12-48 Mo)"]
+        ARO_GEN_350["ARO.GEN.350: Findings & Corrective Action"]
+        LEVEL1["Level 1 Finding: Immediate AOC Restriction"]
+        LEVEL2["Level 2 Finding: 90-Day Corrective Clock"]
+        
+        AIR_OPS --> ARO_GEN_300
+        ARO_GEN_300 --> ARO_GEN_305
+        ARO_GEN_300 --> ARO_GEN_350
+        ARO_GEN_350 --> LEVEL1
+        ARO_GEN_350 --> LEVEL2
+        LEVEL2 -.->|Unresolved > 90 Days| LEVEL1
+    end
+
+    subgraph Organisation_Requirements["3. Airline Management: Part-ORO"]
+        ORO_GEN_210["ORO.GEN.210: Accountable Manager (Corporate Financial Liability)"]
+        ORO_GEN_200["ORO.GEN.200: Management System (SMS & CMS)"]
+        POSTHOLDERS["Nominated Postholders: Flight Ops, Crew Training, Ground, CAMO"]
+        CAP["Corrective Action Plan (CAP) & Root-Cause Analysis"]
+        
+        AIR_OPS --> ORO_GEN_210
+        ORO_GEN_210 --> ORO_GEN_200
+        ORO_GEN_210 --> POSTHOLDERS
+        ORO_GEN_200 --> CAP
+    end
+
+    subgraph Operations_Impact["4. Operational Execution & Enforcement"]
+        FLIGHTS["Normal Commercial Flight Operations (AOC)"]
+        GROUNDING["AOC Restriction / Flight Cancellations / EU 261 Liability"]
+        
+        POSTHOLDERS --> FLIGHTS
+        CAP -->|Verification & Closure| ARO_GEN_350
+        LEVEL1 -->|Mandatory Sanction| GROUNDING
+    end

@@ -1,0 +1,39 @@
+graph TD
+    classDef treaty fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef annex fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef pans fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+    classDef manual fill:#374151,stroke:#9ca3af,stroke-width:1px,color:#ffffff;
+    classDef circular fill:#4c1d95,stroke:#8b5cf6,stroke-width:1px,color:#ffffff;
+    classDef strategic fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph Tier1["Tier 1: Supreme Constitutional Treaty"]
+        CONV["Chicago Convention (Doc 7300)<br/>• 193 Signatory States<br/>• Arts 37 & 54 Authority"]:::treaty
+    end
+
+    subgraph Tier2["Tier 2: Global Standards (SARPs)"]
+        ANNEXES["19 ICAO Annexes<br/>• Adopted by 2/3 ICAO Council<br/>• Standards ('shall') vs Recs ('should')<br/>• Art 38 Differences Required"]:::annex
+    end
+
+    subgraph Tier3["Tier 3: Worldwide Operational Procedures"]
+        PANS["PANS Series (Council Approved)<br/>• Doc 4444: PANS-ATM (Air Traffic)<br/>• Doc 8168: PANS-OPS (Flight Procedures)<br/>• Doc 9868: PANS-TRG (Training/MPL)<br/>• Doc 9981: PANS-ADR (Aerodromes)"]:::pans
+    end
+
+    subgraph Tier4["Tier 4: Technical Guidance Manuals"]
+        MANUALS["ICAO Technical Manuals<br/>• Doc 9859: Safety Management (SMM)<br/>• Doc 9613: Performance-based Nav (PBN)<br/>• Doc 9365: All-Weather Operations (AWO)<br/>• Doc 9137: Airport Services"]:::manual
+    end
+
+    subgraph Tier5["Tier 5: Informational Circulars"]
+        CIRCULARS["ICAO Circulars<br/>• Studies & Regional Reports<br/>• Cir 328: Unmanned Aircraft<br/>• Cir 353: Fatigue Management"]:::circular
+    end
+
+    subgraph Tier6["Tier 6: Global Strategic Plans"]
+        PLANS["Global Strategic Roadmaps<br/>• GASP (Doc 10004): Safety Targets<br/>• GANP (Doc 9750): ASBU Modernization<br/>• GASeP: Aviation Security"]:::strategic
+    end
+
+    CONV -->|Articles 37 & 54 Mandate| ANNEXES
+    ANNEXES -->|Operational Implementation| PANS
+    ANNEXES -->|Technical Guidance| MANUALS
+    PANS -->|Procedure Blueprints| MANUALS
+    MANUALS -.->|Research Inputs| CIRCULARS
+    PLANS ==>|Strategic Policy Direction| ANNEXES
+    PLANS ==>|Modernization Upgrades| PANS

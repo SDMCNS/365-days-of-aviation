@@ -1,0 +1,48 @@
+graph TD
+    subgraph Level1_EULaw["Level 1: EU Basic Regulation"]
+        BASIC_REG["Regulation (EU) 2018/1139"]
+        ANNEX_V["Annex V: Essential Requirements for Flight Crew Fatigue Mitigation"]
+        
+        BASIC_REG --> ANNEX_V
+    end
+
+    subgraph Level2_ImplementingRule["Level 2: Implementing Regulation (Air Ops)"]
+        AIR_OPS["Regulation (EU) 965/2012"]
+        PART_ORO["Part-ORO: Subpart FTL"]
+        ORO_FTL_205["ORO.FTL.205: Flight Duty Period (FDP) & Discretion"]
+        
+        ANNEX_V --> AIR_OPS
+        AIR_OPS --> PART_ORO
+        PART_ORO --> ORO_FTL_205
+    end
+
+    subgraph Level3_CS["Level 3: EASA Certification Specifications"]
+        CS_FTL["CS-FTL.1.205 Table 1: Max FDP Look-up"]
+        FDP_TABLE["FDP Ceiling based on Report Time & Sectors"]
+        
+        ORO_FTL_205 --> CS_FTL
+        CS_FTL --> FDP_TABLE
+    end
+
+    subgraph Level4_AirlineManual["Level 4: Airline Operations Manual (OM-A)"]
+        OM_A_7["Operations Manual Part A Chapter 7 (FTL Scheme)"]
+        DISCRETION_POLICY["Section 7.4: Commander's Discretion Policy (Max 2h)"]
+        
+        FDP_TABLE --> OM_A_7
+        ORO_FTL_205 --> DISCRETION_POLICY
+        OM_A_7 --> DISCRETION_POLICY
+    end
+
+    subgraph Level5_CockpitEvidence["Level 5: Cockpit Execution & Evidence"]
+        DELAY["Unforeseen Delay at Gate"]
+        CREW_BRIEF["Mandatory Crew Fitness Consultation"]
+        ATL_SIGN["Technical Logbook Discretion Sign-off"]
+        FORM_104["Form FTL-104: Authority Notification (> 60 min)"]
+        REST_EXT["Subsequent Minimum Rest Extension (+ Delta t)"]
+        
+        DELAY --> DISCRETION_POLICY
+        DISCRETION_POLICY --> CREW_BRIEF
+        CREW_BRIEF --> ATL_SIGN
+        ATL_SIGN --> REST_EXT
+        ATL_SIGN -->|If Discretion > 1h| FORM_104
+    end

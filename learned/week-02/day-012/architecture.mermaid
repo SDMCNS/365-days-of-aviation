@@ -1,0 +1,44 @@
+graph TD
+    subgraph Phase1_UK["Phase 1: UK Territorial Departure (London Heathrow)"]
+        UK_SOV["UK Sovereign Airspace (Article 1)"]
+        CAA["UK CAA (State of Operator & Registry)"]
+        AOC["British Carrier AOC (Annex 6)"]
+        COA["Certificate of Airworthiness: G-XWBF (Annex 8)"]
+        NATS["NATS: London Area Control Centre (En-Route)"]
+        
+        CAA --> AOC
+        CAA --> COA
+        UK_SOV --> NATS
+    end
+
+    subgraph Phase2_Oceanic["Phase 2: Oceanic Entry & High Seas (NAT-HLA)"]
+        OEP["Oceanic Entry Point: GOMUP (54°N 015°W)"]
+        ART12["Chicago Convention Article 12: High Seas"]
+        ANNEX2["ICAO Annex 2: Rules of the Air (Zero National Deviations)"]
+        SHANWICK["Shanwick Oceanic (EGGX) Delegated ATS"]
+        GANDER["Gander Oceanic (CZQX) Delegated ATS"]
+        
+        OEP --> ART12
+        ART12 --> ANNEX2
+        ANNEX2 --> SHANWICK
+        SHANWICK --> GANDER
+    end
+
+    subgraph Phase3_US["Phase 3: US Territorial Arrival (New York JFK)"]
+        US_SOV["US Sovereign Airspace (Article 1)"]
+        FAA["FAA (State of Destination Oversight)"]
+        PART129["14 CFR Part 129 Foreign Air Carrier Permit"]
+        JFK_TWR["JFK Tower & New York TRACON"]
+        SAFA["Article 16 / SAFA Foreign Ramp Inspection"]
+        ART33["Article 33: Mutual Recognition of Certificates"]
+        
+        US_SOV --> JFK_TWR
+        FAA --> PART129
+        JFK_TWR --> SAFA
+        SAFA --> ART33
+    end
+
+    NATS -->|Oceanic Clearance Request >= 40 min| OEP
+    GANDER -->|Domestic Handover Coastal Entry| US_SOV
+    AOC -.->|Operational Control across Flight| Phase2_Oceanic
+    COA -.->|Airworthiness Passport| ART33

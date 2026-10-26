@@ -1,0 +1,32 @@
+graph TD
+    subgraph ICAO_Standard_Setting["ICAO Standard-Setting Machinery (Article 37)"]
+        Council["ICAO Council Adopts Standards ('Shall') & Recommended Practices ('Should')"]
+        Annexes["19 Technical Annexes (Annex 1, 6, 8, 14, etc.)"]
+        Council --> Annexes
+    end
+
+    subgraph State_Enactment_Fork["National Enactment & Article 38 Assessment"]
+        Decision{"Can Contracting State Comply with Standard?"}
+        Annexes --> Decision
+        Decision -->|Yes: Full Conformity| Enact["Enact Directly into National Aviation Regulations"]
+        Decision -->|No: File Difference| Art38["Article 38 Mandatory Difference Filing to ICAO"]
+    end
+
+    subgraph Difference_Categories["Article 38 Difference Classification (AIP GEN 1.7)"]
+        CatA["Category A: More Exacting<br/>(National rule is stricter than ICAO)"]
+        CatB["Category B: Different Character<br/>(Equivalent alternative technical means)"]
+        CatC["Category C: Less Protective / Sub-Standard<br/>(Fails to meet ICAO minimum level)"]
+        Art38 --> CatA
+        Art38 --> CatB
+        Art38 --> CatC
+    end
+
+    subgraph International_Enforcement["Article 33 Mutual Recognition & Market Access"]
+        Recognize["Article 33 Mandatory Recognition<br/>(Foreign States must accept certificates)"]
+        Sanction["Article 33 Recognition Refused<br/>(Foreign States can ban aircraft from airspace)"]
+        Enact --> Recognize
+        CatA --> Recognize
+        CatB --> Recognize
+        CatC --> Sanction
+        Sanction --> TCO["EASA TCO Ban / FAA IASA Category 2 Downgrade"]
+    end

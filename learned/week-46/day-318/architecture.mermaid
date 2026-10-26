@@ -1,0 +1,17 @@
+graph LR
+    subgraph Airborne_Domain["Airborne Avionics Architecture"]
+        FDR_CVR["Black Box: FDR & CVR (ED-112A)"]
+        AFDX["ARINC 664 AFDX Deterministic Network"]
+        FMS_AI["FMS Trajectory Optimization"]
+    end
+
+    subgraph Ground_Uspace["U-space & Advanced Air Mobility"]
+        SORA["SORA Ground & Air Risk Classes"]
+        USPACE["U-space Airspace Service Providers (USSP)"]
+        EVTOL["eVTOL Urban Air Mobility Fleet"]
+    end
+
+    AFDX <--> FMS_AI
+    AFDX --> FDR_CVR
+    USPACE <-->|Strategic Conflict Resolution| EVTOL
+    SORA -->|Risk Level Determination| USPACE

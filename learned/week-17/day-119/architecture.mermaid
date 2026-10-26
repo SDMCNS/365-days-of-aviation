@@ -1,0 +1,27 @@
+gantt
+    title Aircraft Turnaround Critical Path (45-Minute Ground Stop)
+    dateFormat  X
+    axisFormat %s min
+
+    section Pax Flow
+    Chocks On & Jetbridge Connect :0, 2
+    Passenger Deboarding          :2, 14
+    Cabin Security & Cleaning     :14, 26
+    Passenger Boarding            :26, 42
+    Cabin Secure & Doors Closed   :42, 45
+
+    section Baggage & Cargo
+    Belt Loaders Positioned       :2, 4
+    Inbound Baggage Offload       :4, 16
+    Outbound Baggage Loading      :16, 36
+    Cargo Holds Secured           :36, 40
+
+    section Fuel & Servicing
+    Fuel Truck Position & Ground  :5, 8
+    Underwing Refueling           :8, 24
+    Potable Water & Lavatory      :10, 22
+    Catering Exchange             :14, 25
+
+    section Departure Ready
+    ATC Pushback Clearance        :42, 44
+    Tug Hookup & Pushback         :44, 45

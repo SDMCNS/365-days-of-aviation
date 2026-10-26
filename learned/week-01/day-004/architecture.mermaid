@@ -1,0 +1,28 @@
+graph TD
+    subgraph Serviceable_Aircraft["Aircraft Mechanical Status: 100%"]
+        AIR["Physical Aircraft: Part-M/Part-145 (0 MEL Items)"]
+    end
+
+    subgraph Mandatory_Non_Technical_Gates["The 5 Non-Technical Dispatch Gates"]
+        G_FTL["1. Crew FTL: Duty <= Legal Ceiling (EASA ORO.FTL)"]
+        G_WX["2. Aerodrome Wx: RVR >= Minima & GRF RWYCC >= Min (Part-CAT)"]
+        G_SLOT["3. Flow & Curfew: Arrival <= Airport Night Curfew Cutoff"]
+        G_DIP["4. Overflight: Diplomatic Clearances & FIR Openings"]
+        G_RFFS["5. Emergency: Aerodrome RFFS Fire Category >= Aircraft Min"]
+    end
+
+    subgraph Dispatch_Decision["Operational Release Verdict"]
+        DEC{"All 5 Gates Cleared?"}
+        GO["✅ FLIGHT DISPATCHED"]
+        NOGO["❌ FLIGHT GROUNDED / CANCELLED"]
+    end
+
+    AIR --> DEC
+    G_FTL --> DEC
+    G_WX --> DEC
+    G_SLOT --> DEC
+    G_DIP --> DEC
+    G_RFFS --> DEC
+
+    DEC -->|YES to ALL 5| GO
+    DEC -->|ANY 1 Fails| NOGO

@@ -1,0 +1,42 @@
+graph TD
+    subgraph International_Charter["Chicago Convention 1944 (ICAO Doc 7300)"]
+        Art1["Article 1: Complete & Exclusive Airspace Sovereignty"]
+        Art5["Article 5: Non-Scheduled Flight Transit Rights"]
+        Art6["Article 6: Scheduled Air Services Authorization"]
+        Art12["Article 12: High Seas Exception (Annex 2 Rules)"]
+        Art33["Article 33: Mutual Recognition of Certificates"]
+        Art38["Article 38: State Notification of Differences"]
+    end
+
+    subgraph ICAO_Governance["The Role of ICAO (Montreal)"]
+        Assembly["ICAO Assembly (193 Member States)"]
+        Council["ICAO Council (36 Elected States)"]
+        ANC["Air Navigation Commission (Technical SARPs)"]
+        Annexes["19 Technical Annexes (SARPs & PANS)"]
+        USOAP["USOAP Universal Safety Oversight Audits"]
+    end
+
+    subgraph State_Sovereignty["National Legal Enactment"]
+        NAA["National Aviation Authority (CAA / DGAC / LBA)"]
+        AIP["Aeronautical Information Publication (AIP Gen 1.7 Differences)"]
+        FIR["Flight Information Regions & Sovereign Airspace Boundaries"]
+        Overflight["Sovereign Overflight Clearances & Navigation Charging"]
+    end
+
+    subgraph Operational_Actors["Air Transport Operators"]
+        AOC["Scheduled Airlines (AOC Holders)"]
+        Charter["Non-Scheduled & Business Aviation"]
+        ANSP["Air Navigation Service Providers (Tower/ACC)"]
+    end
+
+    Art1 --> FIR
+    Art6 -->|Mandates BASA Agreements| AOC
+    Art5 -->|Transit Notice| Charter
+    Art12 -->|Over High Seas| ANSP
+    Assembly & Council --> ANC --> Annexes
+    Annexes -->|Not Directly Applicable Law| NAA
+    NAA -->|Enacts Primary Aviation Law| AIP
+    Art38 -->|Differences Notified to ICAO| AIP
+    USOAP -.->|Audits National Compliance| NAA
+    FIR --> Overflight --> ANSP
+    NAA -->|Issues AOC & Licenses| AOC

@@ -1,0 +1,66 @@
+graph TD
+    classDef tier1 fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef tier2 fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef tier3 fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+    classDef tier4 fill:#1f2937,stroke:#4b5563,stroke-width:1px,color:#ffffff;
+    classDef tier5 fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph Tier1_Global["Tier 1: Global Constitutional Order (ICAO)"]
+        DOC7300["Chicago Convention (Doc 7300)<br/>• Sovereign Airspace (Art 1)<br/>• Treaties & Diplomatic Overflight Rights"]:::tier1
+        ANNEXES["19 ICAO Annexes (SARPs)<br/>• Standards ('shall') vs Recs ('should')<br/>• Art 38 Differences in AIP GEN 1.7"]:::tier1
+        PANS["PANS Series<br/>• PANS-OPS (Doc 8168) Obstacle Clearance<br/>• PANS-ATM (Doc 4444) Separation"]:::tier1
+        USOAP["USOAP Continuous Monitoring<br/>• 8 Critical Elements & Safety Oversight"]:::tier1
+    end
+
+    subgraph Tier2_Regional["Tier 2: Supranational Law (European Union & EASA)"]
+        TFEU["TFEU Article 288<br/>• Regulations directly applicable in all 27 States"]:::tier2
+        BASICREG["Basic Regulation (EU) 2018/1139<br/>• Direct Competence: TC, DOA, POA, TCO"]:::tier2
+        DOMAINS["The 7 EASA Domains<br/>• Part-21, Part-M/145/CAMO, Part-CAT/SPA/NCC<br/>• Part-FCL, Part-ADR, Reg 2017/373 ATM, Drones"]:::tier2
+        EAR["Easy Access Rules (EAR)<br/>• Hard Law (IR) vs Soft Law (CS, AMC, GM)"]:::tier2
+    end
+
+    subgraph Tier3_State["Tier 3: National Aviation Authorities (NAAs)"]
+        NAA["State CAA / DGAC<br/>• Issues AOCs, Operating Licenses & Pilot FCL<br/>• Certifies Aerodromes & Part-145 MROs"]:::tier3
+        AIP["State AIP & Route Restrictions<br/>• Special Procedures, Noise Curfews, Charting"]:::tier3
+    end
+
+    subgraph Tier4_Operators["Tier 4: Certified Operational Ecosystem"]
+        AOC["Airlines (AOC Holders)<br/>• Accountable Manager (ORO.GEN.210)<br/>• Nominated Persons (Ops, CAMO, Training)"]:::tier4
+        MRO["Continuing Airworthiness & Maintenance<br/>• Part-CAMO Airworthiness Mgmt<br/>• Part-145 MRO Repair Stations"]:::tier4
+        ADR["Aerodromes (ADR Operators)<br/>• Runway Safety, GRF Surface Reporting, RFFS"]:::tier4
+        ANSP["Air Navigation Service Providers<br/>• En-route ATC, Approach Control & CNS"]:::tier4
+    end
+
+    subgraph Tier5_Evidence["Tier 5: Closed-Loop Frontline Execution & Proof"]
+        QUADLINK["The Quad-Link Traceability Architecture<br/>• Rule -> Org -> Process -> Target -> Proof"]:::tier5
+        TECHLOG["Aircraft Tech Log: CRS Sign-off (Part-145.A.50)"]:::tier5
+        OFP["Flight Plan: Fuel Planning under Reg 2021/1296"]:::tier5
+        FDM["FDM Black Box Telemetry & Safety Performance (SPIs)"]:::tier5
+    end
+
+    DOC7300 --> ANNEXES
+    ANNEXES --> PANS
+    ANNEXES --> USOAP
+
+    DOC7300 ==>|Primary Competence| TFEU
+    TFEU --> BASICREG
+    BASICREG --> DOMAINS
+    DOMAINS --> EAR
+
+    BASICREG ==>|Delegated Oversight| NAA
+    ANNEXES --> AIP
+    NAA --> AIP
+
+    NAA ==>|AOC Oversight| AOC
+    NAA ==>|Approval| MRO
+    NAA ==>|Certification| ADR
+    NAA ==>|Designation| ANSP
+
+    AOC --> QUADLINK
+    MRO --> TECHLOG
+    AOC --> OFP
+    AOC --> FDM
+
+    TECHLOG --> QUADLINK
+    OFP --> QUADLINK
+    FDM --> QUADLINK

@@ -1,0 +1,27 @@
+graph TD
+    subgraph Regulatory_Spine["Regulatory & International Architecture"]
+        ICAO["ICAO: Chicago Convention & Annexes"]
+        EU["EU: Regulation (EU) 2018/1139"]
+        EASA["EASA: Technical Rules & Easy Access Rules"]
+        NAA["National Aviation Authorities (NAAs)"]
+    end
+
+    subgraph Operational_Actors["Operational Aviation Ecosystem"]
+        AOC["Airlines (AOC Holders)"]
+        APT["Aerodrome Operators (ADR)"]
+        ANS["ANSPs (Air Traffic Control & CNS)"]
+        MRO["CAMO & Part-145 Maintenance"]
+        GH["Ground Handling & Ramp Services"]
+    end
+
+    ICAO -->|SARPs & PANS| EU
+    EU -->|Basic Regulation| EASA
+    EASA -->|Implementing Rules & AMC/GM| NAA
+    NAA -->|Certificates & Oversight| AOC
+    NAA -->|Aerodrome Certification| APT
+    NAA -->|ANSP Designation| ANS
+    AOC <-->|Turnaround & Stand Ops| APT
+    AOC <-->|Flight Planning & Separation| ANS
+    AOC <-->|Continuing Airworthiness| MRO
+    APT <-->|Ramp Safety & Pushback| GH
+    AOC <-->|SLA & Dispatch| GH

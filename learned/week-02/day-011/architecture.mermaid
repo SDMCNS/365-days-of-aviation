@@ -1,0 +1,26 @@
+graph TD
+    subgraph Global_Harmonisation["ICAO Global Harmonisation (Doc 7300)"]
+        SARPs["ICAO Annexes 1-19 (SARPs Baseline)"]
+        Art33["Article 33: Mutual Recognition of Licenses"]
+        Art7["Article 7: Cabotage Protection Framework"]
+    end
+
+    subgraph National_Sovereign_Deviations["National Sovereign Enactments & Super-Standards"]
+        FAA_ATP["US FAA '1,500-Hour Rule' (FAR Part 121)<br/>Stricter than ICAO Annex 1 (250 hrs)"]
+        EU_261["EASA / EU Regulation 261/2004<br/>Extraterritorial Strict Passenger Delay Cash Liability"]
+        Domestic_Cabotage["National Cabotage Bans<br/>Foreign carriers barred from domestic passenger transport"]
+    end
+
+    subgraph Operational_Friction_Points["Cross-Border Operational & Financial Impact"]
+        Crew_Block["Foreign First Officers Barred from Domestic Codeshare"]
+        Delay_Penalty["Massive Financial Liabilities (€600/pax) on Foreign Airlines"]
+        Market_Ban["Cabotage Violation Fines & Foreign Operating Permit Revocation"]
+    end
+
+    SARPs -->|Category A Super-Standard| FAA_ATP
+    SARPs -->|Extraterritorial Reach| EU_261
+    Art7 -->|Strict Domestic Enforcement| Domestic_Cabotage
+
+    FAA_ATP --> Crew_Block
+    EU_261 --> Delay_Penalty
+    Domestic_Cabotage --> Market_Ban

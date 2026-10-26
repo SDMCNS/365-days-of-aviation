@@ -1,0 +1,17 @@
+graph TD
+    subgraph Whole_System_Ecosystem["Aviation 365: Master Connected Ecosystem"]
+        REG["Regulator (ICAO / EU / EASA / NAA)"]
+        AIRLINE["Airline Operations Center (AOC / OCC)"]
+        AIRPORT["Airport Operator (Airside & Terminal)"]
+        ANSP["Air Navigation Service Provider (ATM)"]
+        PAX["Passenger & Cargo Logistics"]
+    end
+
+    REG -->|Safety Rules & Economic Licences| AIRLINE
+    REG -->|Aerodrome Certification| AIRPORT
+    REG -->|Safety Directive & Airspace Laws| ANSP
+    AIRLINE <-->|Turnaround & Stand Allocations| AIRPORT
+    AIRLINE <-->|Trajectory & ATFM Slots| ANSP
+    PAX <-->|Tickets, Baggage & Facilitation| AIRLINE
+    PAX <-->|Security & Terminal Flow| AIRPORT
+    ANSP <-->|A-CDM Coordinated Departure| AIRPORT

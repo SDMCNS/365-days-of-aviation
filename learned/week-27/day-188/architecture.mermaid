@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Cockpit_Prep: Pre-Flight Checklists
+    Cockpit_Prep --> Taxi_Out: Pushback & Taxi Clearance
+    Taxi_Out --> Takeoff_Climb: Runway Line-up & TOGA Thrust
+    Takeoff_Climb --> Enroute_Cruise: Reaching Initial Cruise FL
+    Enroute_Cruise --> Step_Climb: Fuel Burn & Optimum FL
+    Step_Climb --> Enroute_Cruise: Level-off
+    Enroute_Cruise --> Descent_CDO: Top of Descent (TOD)
+    Descent_CDO --> Approach_ILS: Initial Approach Fix (IAF)
+    Approach_ILS --> Landing_Roll: Touchdown & Reversers
+    Landing_Roll --> Taxi_In: Runway Vacated
+    Taxi_In --> Chocks_On: Stand Arrival & Engines Off
+    Chocks_On --> [*]

@@ -1,0 +1,106 @@
+{
+  "title": "Day 028 \u2014 Month 01 Capstone Project: Master Aviation Ecosystem Map & Regulatory Reference Guide",
+  "day_number": 28,
+  "estimated_duration_sec": 154,
+  "segments": [
+    {
+      "segment_index": 1,
+      "segment_title": "Executive Summary & The 5-Tier Aviation Ecosystem",
+      "timestamp_start": "00:00",
+      "visual_card": "The 5-Tier Aviation Ecosystem Topology"
+    },
+    {
+      "segment_index": 2,
+      "segment_title": "Global Treaty Law and Supranational Legislation",
+      "timestamp_start": "02:30",
+      "visual_card": "Tier 1 & Tier 2 Structural Bridge"
+    },
+    {
+      "segment_index": 3,
+      "segment_title": "National Oversight and Certified Frontline Operations",
+      "timestamp_start": "05:15",
+      "visual_card": "National Authorities to Operator Ecosystem"
+    },
+    {
+      "segment_index": 4,
+      "segment_title": "The Quad-Link Traceability Architecture & Closing Takeaway",
+      "timestamp_start": "09:00",
+      "visual_card": "Closed-Loop Frontline Execution & Proof"
+    }
+  ],
+  "dialogue": [
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Host",
+      "timestamp": "00:00",
+      "text": "Welcome back, aviation architects. Today is Day 28, and we have reached the pinnacle of Month 1: our Capstone Project. We are building the Master Aviation Ecosystem Map and Regulatory Reference Guide.",
+      "visual_cue": "Display title card: Month 01 Capstone Project \u2014 Master Aviation Ecosystem Map & Regulatory Reference Guide",
+      "duration_sec": 15.05
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Co-Host",
+      "timestamp": "00:15",
+      "text": "That is right, Elena. Over the past four weeks, we have traveled from global airport networks and the Chicago Convention all the way down to EASA Basic Regulations and the torque wrench calibration record signed by an engineer in the hangar.",
+      "visual_cue": "Highlight the 5-Tier Aviation Ecosystem diagram from README.md",
+      "duration_sec": 17.37
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Host",
+      "timestamp": "00:33",
+      "text": "Let us break down that pyramid structure. Civil aviation is not a random collection of rules; it is a tightly coupled, multi-tiered hierarchy. Power and operational data cascade down through five distinct layers.",
+      "visual_cue": "Zoom into Tier 1: Global Public International Law (ICAO)",
+      "duration_sec": 14.78
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Co-Host",
+      "timestamp": "00:48",
+      "text": "At Tier 1, we have ICAO and Doc 7300\u2014the Chicago Convention. Article 1 gives us absolute sovereign airspace. Then you have the 19 Annexes with SARPs distinguishing between 'shall' and 'should', plus PANS-OPS and PANS-ATM.",
+      "visual_cue": "Display callout box showing ICAO Doc 7300, Annexes, and PANS Series",
+      "duration_sec": 20.29
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Host",
+      "timestamp": "01:09",
+      "text": "Moving to Tier 2, we cross into supranational law. In Europe, TFEU Article 288 gives EU Regulations direct applicability across all 27 member states, underpinned by Basic Regulation (EU) 2018/1139 and the 7 EASA domains.",
+      "visual_cue": "Highlight Tier 2: Supranational & Regional Legislation (EU & EASA)",
+      "duration_sec": 20.53
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Co-Host",
+      "timestamp": "01:30",
+      "text": "And from EASA, we cascade down to Tier 3: National Aviation Authorities like the UK CAA or French DGAC. They issue AOCs, handle Part-145 approvals, and publish local AIP differences and noise curfews.",
+      "visual_cue": "Show Tier 3: National Oversight & State Regulations (NAAs & Local AIP)",
+      "duration_sec": 18.76
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Host",
+      "timestamp": "01:49",
+      "text": "Which brings us directly to Tier 4, the certified operators: airlines under Part-CAT, CAMO airworthiness management, and MRO stations keeping fleets airworthy.",
+      "visual_cue": "Transition to Tier 4: Certified Operational Organisations",
+      "duration_sec": 11.57
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Co-Host",
+      "timestamp": "02:01",
+      "text": "And finally, Tier 5\u2014the closed-loop frontline execution. This is where the Quad-Link Traceability Architecture binds a statutory rule to an Accountable Manager, flows through frontline SOPs, and results in indestructible proof like the aircraft Tech Log sign-off.",
+      "visual_cue": "Display the Quad-Link Traceability Architecture diagram from architecture.mermaid",
+      "duration_sec": 19.31
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Host",
+      "timestamp": "02:20",
+      "text": "Every commercial departure is the physical manifestation of this entire hierarchy. If a single link fails, the system halts. That concludes our Month 01 Capstone synthesis.",
+      "visual_cue": "Show closing summary graphic featuring the unified global-to-cockpit architecture",
+      "duration_sec": 12.93
+    }
+  ],
+  "closing_takeaway": "Civil aviation functions as a tightly coupled 5-tier hierarchy where global treaties, supranational regulations, national oversight, and organizational operations converge into indestructible frontline proof through the Quad-Link Traceability Architecture."
+}

@@ -1,0 +1,48 @@
+graph TD
+    subgraph Pillar1_Rulemakers["Pillar 1: Who Makes the Rules? (Legislators & Technical Agency)"]
+        ICAO["ICAO: Chicago Convention & Annexes 1-19 (Global SARPs)"]
+        EU_PARL["EU Parliament & Council: Basic Regulation (EU) 2018/1139"]
+        COMMISSION["European Commission (DG MOVE): Implementing Regulations"]
+        EASA_RM["EASA Rulemaking: CS (CS-25/FTL), AMC & GM"]
+        
+        ICAO --> EU_PARL
+        EU_PARL --> COMMISSION
+        COMMISSION --> EASA_RM
+    end
+
+    subgraph Pillar2_Overseers["Pillar 2: Who Oversees Compliance? (Regulators & Inspectors)"]
+        EASA_DIRECT["EASA Direct Certification: Type Certs (TC/DOA) & Part-TCO"]
+        EASA_STD["EASA Standardisation Oversight: Audits NCAs"]
+        NCA["National Competent Authorities (DGAC, LBA, AESA, ENAC, CAA)"]
+        EUROCONTROL["Eurocontrol: Network Manager & Central Route Charges"]
+        
+        COMMISSION --> EASA_DIRECT
+        COMMISSION --> EASA_STD
+        EASA_STD --> NCA
+        COMMISSION --> NCA
+        COMMISSION --> EUROCONTROL
+    end
+
+    subgraph Pillar3_Operators["Pillar 3: Who Operates the Services? (Industry Operators)"]
+        AIRLINE["Airlines (AOC Holders under Part-CAT)"]
+        MRO["Maintenance Organisations (Part-145 MRO & Part-CAMO)"]
+        AERODROME["Commercial Aerodrome Operators (ADR Certified)"]
+        ANSP["Air Navigation Service Providers (DFS, NATS, DSNA)"]
+        PILOTS["Flight Crew & Training Organisations (ATOs)"]
+        
+        NCA -->|Issues AOC & Audits| AIRLINE
+        NCA -->|Issues 145 Approval & Audits| MRO
+        NCA -->|Issues ADR Certificate| AERODROME
+        NCA -->|Issues ANS Certificate| ANSP
+        NCA -->|Issues Pilot Licenses| PILOTS
+    end
+
+    subgraph Flight_Execution["Operational Real-Time Synchronization"]
+        DISPATCH["Real-Time Commercial Flight Departure Handshake"]
+        
+        AIRLINE --> DISPATCH
+        MRO -->|Signed CRS in Tech Log| DISPATCH
+        AERODROME -->|Runway Friction & RFFS Cat 9| DISPATCH
+        ANSP -->|Departure Slot CTOT Cleared| DISPATCH
+        EUROCONTROL -->|Route Charge Cleared| DISPATCH
+    end

@@ -1,0 +1,39 @@
+graph TD
+    subgraph Commercial_Strategic["Phase 1: Commercial & Strategic (D-365 to D-30)"]
+        M1["M01: Booking & PNR Creation<br/>(GDS / Amadeus / Sabre)"]
+        M2["M02: Airport Slot Coordination<br/>(WASG Level 3 Slot Pairs)"]
+        M1 --> M2
+    end
+
+    subgraph Tactical_Planning["Phase 2: Tactical Roster & Airworthiness (D-30 to D-1)"]
+        M3["M03: Crew Roster Published<br/>(EASA ORO.FTL Legality)"]
+        M4["M04: Aircraft Line Check & CRS<br/>(EASA Part-M / MEL Review)"]
+        M2 --> M3
+        M2 --> M4
+    end
+
+    subgraph Operational_Dispatch["Phase 3: Operational Dispatch (D-3h to D-45m)"]
+        M5["M05: CFP & Fuel Integration<br/>(Eurocontrol IFPS Accepted FPL)"]
+        M6["M06: Crew Briefing & Tech Log<br/>(OFP Sign-off & Acceptance)"]
+        M3 --> M5
+        M4 --> M5
+        M5 --> M6
+    end
+
+    subgraph Ground_Turnaround["Phase 4: Turnaround & Departure (D-45m to D-0)"]
+        M7["M07: Boarding & DCS Bag Match<br/>(ICAO Annex 17 Security Gate)"]
+        M8["M08: Loadsheet & Trim via ACARS<br/>(ZFW, TOW & Stabilizer Trim)"]
+        M9["M09: Pre-Departure DCL & Pushback<br/>(A-CDM Target Startup Time)"]
+        M6 --> M7
+        M7 --> M8
+        M8 --> M9
+    end
+
+    subgraph Airborne_Arrival["Phase 5: Trajectory & Post-Flight (D-0 to In-Blocks)"]
+        M10["M10: Take-off & SID Climb<br/>(Radar Handoff Tower to ACC)"]
+        M11["M11: En-Route RVSM & TOD Idle Descent<br/>(3:1 Vertical Descent Profile)"]
+        M12["M12: Touchdown, In-Blocks & Tech Log<br/>(Flight Hours & Fuel Remaining Recorded)"]
+        M9 --> M10
+        M10 --> M11
+        M11 --> M12
+    end

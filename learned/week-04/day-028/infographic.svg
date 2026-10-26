@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="950" viewBox="0 0 1400 950">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#0b1120"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+    <pattern id="radarGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background with subtle technical radar grid -->
+  <rect width="1400" height="950" fill="url(#bgGrad)"/>
+  <rect width="1400" height="950" fill="url(#radarGrid)" opacity="0.3"/>
+  <rect x="15" y="15" width="1370" height="920" rx="12" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <!-- Top Executive Header -->
+  <rect x="25" y="25" width="1350" height="90" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Branding Pill -->
+  <rect x="45" y="40" width="170" height="28" rx="6" fill="url(#cyanGrad)"/>
+  <text x="55" y="59" fill="#090d16" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">✈ AVIATION 365</text>
+  
+  <rect x="225" y="40" width="190" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="238" y="59" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="11" font-weight="bold">DAY 028 EXECUTIVE BRIEF</text>
+
+  <!-- Title -->
+  <text x="45" y="96" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="22" font-weight="bold">Day 028 — Month 01 Capstone Project: Master Aviation Ecosystem Map &amp; Re</text>
+
+  <!-- Right Badges -->
+  <rect x="940" y="38" width="415" height="30" rx="5" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="955" y="58" fill="#10b981" font-family="Segoe UI, Arial" font-size="11" font-weight="bold">⚖ ICAO Doc 7300, TFEU Article 288, (EU) 2018/1139, a</text>
+
+  <rect x="940" y="74" width="415" height="30" rx="5" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="955" y="94" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">🌐 End-to-End Global-to-Cockpit Regulatory &amp; Ecos</text>
+
+  <!-- Executive Summary Banner -->
+  <rect x="25" y="122" width="1350" height="38" rx="6" fill="#0d1424" stroke="#1e293b" stroke-width="1"/>
+  <text x="40" y="146" fill="#e2e8f0" font-family="Segoe UI, Arial" font-size="11">
+    <tspan font-weight="bold" fill="#38bdf8">EXECUTIVE CONTEXT: </tspan>Today&apos;s capstone synthesizes the four foundational pillars of Month 01 into a unified operational artifact: The Master Aviation Ecosystem Map and Regulatory Ref
+  </text>
+
+  <!-- 3 KPI Metric Cards -->
+  
+        <g transform="translate(35, 170)">
+            <rect width="426" height="105" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect width="426" height="4" rx="2" fill="#06b6d4"/>
+            <text x="20" y="28" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" letter-spacing="1">ECOSYSTEM LAYERS</text>
+            <text x="20" y="68" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="30" font-weight="bold">5 Tiers</text>
+            <text x="20" y="90" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">From ICAO Global Treaties to Frontline Aircraft Te</text>
+        </g>
+        
+        <g transform="translate(481, 170)">
+            <rect width="426" height="105" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect width="426" height="4" rx="2" fill="#10b981"/>
+            <text x="20" y="28" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" letter-spacing="1">EASA DOMAINS</text>
+            <text x="20" y="68" fill="#10b981" font-family="Segoe UI, Arial" font-size="30" font-weight="bold">7 Domains</text>
+            <text x="20" y="90" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">Covering Part-21 through UAS and ATM/ANS</text>
+        </g>
+        
+        <g transform="translate(927, 170)">
+            <rect width="426" height="105" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect width="426" height="4" rx="2" fill="#f59e0b"/>
+            <text x="20" y="28" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11" font-weight="bold" letter-spacing="1">MONTH 01 SCOPE</text>
+            <text x="20" y="68" fill="#f59e0b" font-family="Segoe UI, Arial" font-size="30" font-weight="bold">4 Weeks</text>
+            <text x="20" y="90" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">Global Air Transport, International Law, EU Govern</text>
+        </g>
+        
+
+  <!-- 4 Core Pillars -->
+  
+        <g transform="translate(35, 295)">
+            <rect width="645" height="175" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect x="18" y="14" width="34" height="26" rx="4" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+            <text x="27" y="32" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">01</text>
+            <text x="62" y="32" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Tier 1: Global Constitutional Order (ICAO)</text>
+            <text x="20" y="52" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">
+                <tspan x="20" dy="20">Covers the Chicago Convention (Doc 7300) establishing airspace</tspan><tspan x="20" dy="20">sovereignty (Article 1), 19 ICAO Annexes containing Standards and</tspan><tspan x="20" dy="20">Recommended Practices (SARPs), PANS series documents, and USOAP</tspan><tspan x="20" dy="20">continuous monitoring.</tspan>
+            </text>
+        </g>
+        
+        <g transform="translate(720, 295)">
+            <rect width="645" height="175" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect x="18" y="14" width="34" height="26" rx="4" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+            <text x="27" y="32" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">02</text>
+            <text x="62" y="32" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Tier 2: Supranational Law (EU &amp; EASA)</text>
+            <text x="20" y="52" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">
+                <tspan x="20" dy="20">Governed by TFEU Article 288 ensuring direct applicability of EU</tspan><tspan x="20" dy="20">regulations, Basic Regulation (EU) 2018/1139 establishing EASA</tspan><tspan x="20" dy="20">competence, the 7 EASA domains, and Easy Access Rules separating</tspan><tspan x="20" dy="20">hard law from soft law.</tspan>
+            </text>
+        </g>
+        
+        <g transform="translate(35, 485)">
+            <rect width="645" height="175" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect x="18" y="14" width="34" height="26" rx="4" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+            <text x="27" y="32" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">03</text>
+            <text x="62" y="32" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Tier 3: National Aviation Authorities (NAAs)</text>
+            <text x="20" y="52" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">
+                <tspan x="20" dy="20">State-level oversight where National Civil Aviation Authorities</tspan><tspan x="20" dy="20">issue AOCs, pilot licenses, and aerodrome certifications, while</tspan><tspan x="20" dy="20">publishing Aeronautical Information Publications (AIP) including</tspan><tspan x="20" dy="20">GEN 1.7 state differences.</tspan>
+            </text>
+        </g>
+        
+        <g transform="translate(720, 485)">
+            <rect width="645" height="175" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+            <rect x="18" y="14" width="34" height="26" rx="4" fill="#1e293b" stroke="#06b6d4" stroke-width="1"/>
+            <text x="27" y="32" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">04</text>
+            <text x="62" y="32" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Tier 4: Certified Operational Organizations</text>
+            <text x="20" y="52" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">
+                <tspan x="20" dy="20">Industry operators including Airlines under Part-CAT, Accountable</tspan><tspan x="20" dy="20">Managers under ORO.GEN.210, Continuing Airworthiness Management</tspan><tspan x="20" dy="20">Organizations (CAMO), Part-145 maintenance repair stations, and</tspan><tspan x="20" dy="20">ANSPs.</tspan>
+            </text>
+        </g>
+        
+
+  <!-- Bottom: Hazard Box & Statutory Evidence Box -->
+  <!-- Left: Hazard Alert -->
+  <g transform="translate(35, 680)">
+    <rect width="645" height="225" rx="8" fill="#1e1115" stroke="#ef4444" stroke-width="1"/>
+    <rect width="645" height="32" rx="6" fill="url(#dangerGrad)"/>
+    <text x="20" y="22" fill="#ffffff" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">⚠️ OPERATIONAL RISK &amp; REGULATORY HAZARD</text>
+    <text x="20" y="60" fill="#fca5a5" font-family="Segoe UI, Arial" font-size="14" font-weight="bold">Regulatory Hierarchy &amp; Constraint Intersect Warning</text>
+    <text x="20" y="95" fill="#f1f5f9" font-family="Segoe UI, Arial" font-size="11">
+      <tspan x="20" dy="0">Operators must always verify that national AIP local restrictions and stricter state rules do not conflict with broader </tspan>
+      <tspan x="20" dy="24">EASA or ICAO permissions. Tripartite constraint intersections must be satisfied simultaneously for every flight dispatch</tspan>
+    </text>
+    <rect x="20" y="175" width="280" height="26" rx="4" fill="#2d161b" stroke="#ef4444" stroke-width="0.5"/>
+    <text x="30" y="192" fill="#ef4444" font-family="Segoe UI, Arial" font-size="10" font-weight="bold">MANDATORY DISPATCH CONSTRAINT</text>
+  </g>
+
+  <!-- Right: Statutory Citations -->
+  <g transform="translate(720, 680)">
+    <rect width="645" height="225" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <rect width="645" height="32" rx="6" fill="#1e293b"/>
+    <text x="20" y="22" fill="#10b981" font-family="Segoe UI, Arial" font-size="12" font-weight="bold">⚖ STATUTORY CITATIONS &amp; LEGAL FOUNDATION</text>
+    <text x="25" y="55" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">• Chicago Convention (Doc 7300) Articles 1, 5, 6, 12, 38</text>
+<text x="25" y="80" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">• TFEU Article 288</text>
+<text x="25" y="105" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">• Regulation (EU) 2018/1139 (Basic Regulation)</text>
+<text x="25" y="130" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="11">• Regulation (EU) No 965/2012 (Part-CAT &amp; Part-ORO)</text>
+
+    <line x1="20" y1="170" x2="625" y2="170" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="196" fill="#06b6d4" font-family="Segoe UI, Arial" font-size="11" font-weight="bold">AUDIT READY: Closed-loop evidence verified against international standards.</text>
+  </g>
+
+  <!-- Footer Watermark -->
+  <text x="35" y="930" fill="#64748b" font-family="Segoe UI, Arial" font-size="10">
+    Aviation 365 Studio · Executive Infographic Vector Engine · Grounded in Primary Aviation Law &amp; Operational Physics
+  </text>
+</svg>

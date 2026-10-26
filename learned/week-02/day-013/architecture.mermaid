@@ -1,0 +1,51 @@
+graph TD
+    subgraph Global_Spine["1. Global International Standards"]
+        ICAO_A6["ICAO Annex 6: Operation of Aircraft (SARPs)"]
+        ICAO_A8["ICAO Annex 8: Airworthiness of Aircraft"]
+        ICAO_TI["ICAO Doc 9284: Dangerous Goods Technical Instructions"]
+    end
+
+    subgraph State_Law["2. National / Regional Regulations"]
+        EASA_AIR_OPS["EASA Air Ops: Reg (EU) 965/2012"]
+        PART_SPA["Part-SPA: Specific Approvals (LVO, ETOPS, RVSM, PBN, DG)"]
+        PART_CAT["Part-CAT: Commercial Air Transport Core Rules"]
+        
+        ICAO_A6 --> EASA_AIR_OPS
+        ICAO_A8 --> EASA_AIR_OPS
+        ICAO_TI --> PART_SPA
+        EASA_AIR_OPS --> PART_SPA
+        EASA_AIR_OPS --> PART_CAT
+    end
+
+    subgraph Operator_Level["3. Airline Organization & Certification"]
+        AOC["Air Operator Certificate (AOC)"]
+        OPSPECS["Operations Specifications (OpSpecs)"]
+        OM_A["Operations Manual Part A: General Policy"]
+        OM_B["Operations Manual Part B: Aircraft Operating Manual & AFM"]
+        
+        PART_SPA --> OPSPECS
+        PART_CAT --> AOC
+        AOC --> OPSPECS
+        OPSPECS --> OM_A
+        OPSPECS --> OM_B
+    end
+
+    subgraph Operational_Pillars["4. The 4-Pillar Clearance Verification Matrix"]
+        P1["Pillar 1: Airline OpSpec Approval (CAT IIIb / ETOPS)"]
+        P2["Pillar 2: Aircraft AFM Certification & Serviceable Systems"]
+        P3["Pillar 3: Flight Crew Type Rating & Recurrent Currency"]
+        P4["Pillar 4: Local Aerodrome LVP Procedures Active (AIP AD 2)"]
+        
+        OPSPECS --> P1
+        OM_B --> P2
+        OM_A --> P3
+    end
+
+    subgraph Execution["5. Cockpit Action & Safe Execution"]
+        CLEARANCE["Legal & Safe Execution of Flight (Autoland / Extended Route)"]
+        
+        P1 --> CLEARANCE
+        P2 --> CLEARANCE
+        P3 --> CLEARANCE
+        P4 --> CLEARANCE
+    end

@@ -1,0 +1,59 @@
+graph TD
+    classDef primary fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef domain fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef part fill:#1f2937,stroke:#4b5563,stroke-width:1px,color:#ffffff;
+    classDef ear fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+
+    subgraph SupremeLaw["Supreme EU Aviation Law"]
+        BASIC["Basic Regulation (EU) 2018/1139<br/>• Enacted by EU Parliament & Council<br/>• Sets Scope, Essential Requirements & EASA Mandate"]:::primary
+    end
+
+    subgraph SevenDomains["7 Core EASA Regulatory Domains"]
+        D1["Domain 1: Initial Airworthiness<br/>Reg (EU) 748/2012"]:::domain
+        D2["Domain 2: Continuing Airworthiness<br/>Reg (EU) 1321/2014"]:::domain
+        D3["Domain 3: Air Operations (Air Ops)<br/>Reg (EU) 965/2012"]:::domain
+        D4["Domain 4: Aircrew & Licensing<br/>Reg (EU) 1178/2011"]:::domain
+        D5["Domain 5: Aerodromes & Ground Ops<br/>Reg (EU) 139/2014"]:::domain
+        D6["Domain 6: ATM / ANS Services<br/>Reg (EU) 2017/373"]:::domain
+        D7["Domain 7: Drones & UAS<br/>Reg (EU) 2019/947 & 2019/945"]:::domain
+    end
+
+    subgraph AirOpsParts["Domain 3: Air Ops Structure"]
+        P_ARO["Part-ARO (Authority Requirements)"]:::part
+        P_ORO["Part-ORO (Organisation Requirements)"]:::part
+        P_CAT["Part-CAT (Commercial Air Transport)"]:::part
+        P_SPA["Part-SPA (Specific Approvals: LVO/ETOPS)"]:::part
+        P_NCC["Part-NCC (Non-Commercial Complex)"]:::part
+        P_NCO["Part-NCO (Non-Commercial Other)"]:::part
+        P_SPO["Part-SPO (Specialised Aerial Work)"]:::part
+    end
+
+    subgraph EARStructure["Easy Access Rules (EAR) Anatomy"]
+        EAR["EASA Easy Access Rules Book"]:::ear
+        IR["1. Implementing Rule (Hard Law)"]:::ear
+        CS["2. Certification Specs (CS)"]:::ear
+        AMC["3. Acceptable Means of Compliance (Soft Law)"]:::ear
+        GM["4. Guidance Material (Non-binding)"]:::ear
+    end
+
+    BASIC --> D1
+    BASIC --> D2
+    BASIC --> D3
+    BASIC --> D4
+    BASIC --> D5
+    BASIC --> D6
+    BASIC --> D7
+
+    D3 --> P_ARO
+    D3 --> P_ORO
+    D3 --> P_CAT
+    D3 --> P_SPA
+    D3 --> P_NCC
+    D3 --> P_NCO
+    D3 --> P_SPO
+
+    P_CAT -.-> EAR
+    EAR --> IR
+    EAR --> CS
+    EAR --> AMC
+    EAR --> GM

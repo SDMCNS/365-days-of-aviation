@@ -1,0 +1,48 @@
+graph TD
+    classDef hardlaw fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef softlaw fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef guidance fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+    classDef company fill:#1f2937,stroke:#4b5563,stroke-width:1px,color:#ffffff;
+    classDef action fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph Tier1_HardLaw["1. Primary Legislative Act (Hard Law)"]
+        REG965["Regulation (EU) No 965/2012 Annex IV (Part-CAT)<br/>• CAT.GEN.MPA.140: Portable Electronic Devices<br/>• CAT.GEN.MPA.200: Transport of Dangerous Goods"]:::hardlaw
+    end
+
+    subgraph Tier2_SoftLaw["2. EASA Soft Law (Presumption of Conformity)"]
+        AMC1["AMC1 CAT.GEN.MPA.140<br/>• RTCA DO-363 / ED-239 EMI Standards"]:::softlaw
+        AMC2["AMC2 CAT.GEN.MPA.140<br/>• Cabin Crew Firefighting & Water Cooling"]:::softlaw
+        GM1["GM1 CAT.GEN.MPA.140<br/>• Battery Risk Assessment & Crew Briefing"]:::softlaw
+    end
+
+    subgraph Tier3_Technical["3. Technical Standards & Directives"]
+        ICAO9284["ICAO Doc 9284 (Dangerous Goods Technical Instructions)"]:::guidance
+        EASASIB["EASA SIB 2017-01R1 (Smart Luggage & Lithium Batteries)"]:::guidance
+    end
+
+    subgraph Tier4_Internal["4. Company Operational Implementation"]
+        OMA["Operations Manual Part A (Section 8.3 & 9.2)"]:::company
+        OMB["Cabin Crew Operating Manual (SEP Manual)"]:::company
+        TRAIN["Dangerous Goods Recurrent Training Syllabus"]:::company
+    end
+
+    subgraph Tier5_Execution["5. Operational Line Defense"]
+        CHECKIN["Airport Check-in & Gate: Smart Bag Battery Inspection"]:::action
+        CABIN_CONTAIN["Cabin Crew Fire Containment Bag & Water Dousing"]:::action
+        CARGO_BAN["Strict Prohibition of Spare Batteries in Hold"]:::action
+    end
+
+    REG965 --> AMC1
+    REG965 --> AMC2
+    REG965 --> GM1
+    REG965 --> ICAO9284
+    ICAO9284 --> EASASIB
+
+    AMC1 --> OMA
+    AMC2 --> OMB
+    GM1 --> TRAIN
+    EASASIB --> OMA
+
+    OMA --> CHECKIN
+    OMB --> CABIN_CONTAIN
+    OMA --> CARGO_BAN

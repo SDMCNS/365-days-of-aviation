@@ -1,0 +1,23 @@
+graph TD
+    subgraph Regulatory Framework ["ICAO Annex 8 & EASA CS-25"]
+        TC[Type Certificate & TCDS] --> Airworthiness[Airworthiness Baseline]
+    end
+
+    subgraph Operational Ecosystem ["Aviation Stakeholder Network"]
+        Airworthiness --> Operator[Airline / CAT Operator]
+        Operator --> Dispatch[Flight Dispatch & CAME]
+        Operator --> Ground[Ground Handling & Load Control]
+    end
+
+    subgraph Flight Execution ["Operational Handshake"]
+        Dispatch --> Plan[Operational Flight Plan & Fuel Plan]
+        Ground --> MassBal[Weight & Balance / %MAC Check]
+        Plan --> Crew[Flight Crew Acceptance]
+        MassBal --> Crew
+    end
+
+    subgraph Safety Barriers ["Safety Management System (SMS)"]
+        Crew --> SMS{Configuration & Safety Check}
+        SMS -- Valid --> Flight[Safe Commercial Flight Operation]
+        SMS -- Anomaly Detected --> Mitigation[MEL / CDL / Recalibration]
+    end

@@ -1,0 +1,28 @@
+# Python Bytecode & Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# User Secrets & Local Configuration
+.aviation_config.json
+.practicai_config.json
+.env
+.env.*
+
+# Local User Progress & Profiler State
+.aviation_profile.json
+.aviation_progress.json
+.practicai_progress.json
+
+# Scratch & Temporary
+scratch/
+.viewer_cache/
+*.tmp
+
+# OS & IDE Metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

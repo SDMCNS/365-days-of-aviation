@@ -1,0 +1,30 @@
+graph TD
+    subgraph Tier1["Tier 1: Supreme Treaty Law"]
+        T1["Chicago Convention 1944 (ICAO Doc 7300)<br/>96 Articles Ratified by Sovereign Parliaments"]
+    end
+
+    subgraph Tier2["Tier 2: International Standards & Recommended Practices"]
+        T2["19 ICAO Annexes (Annex 1 to 19)<br/>Adopted by ICAO Council · Standards ('Shall') & Recommendations ('Should')"]
+    end
+
+    subgraph Tier3["Tier 3: Procedures for Air Navigation Services"]
+        T3["PANS Documents (Doc 4444 ATM, Doc 8168 OPS, Doc 9981 ADR)<br/>Council-Approved Worldwide Operational Procedures"]
+    end
+
+    subgraph Tier4["Tier 4: Guidance Material & Manuals"]
+        T4["ICAO Manuals & Circulars (Doc 9859 SMS, Doc 9976 Fuel, Doc 9640)<br/>Advisory 'How-to' Implementation Material"]
+    end
+
+    subgraph Tier5["Tier 5: National Law & Operator Procedures"]
+        T5A["Primary Aviation Acts & Regional Rules<br/>(Regulation EU 2018/1139, EASA Part-CAT/Part-M, FAA FARs)"]
+        T5B["State Aeronautical Information Publication (AIP)<br/>National Airspace, Routes, and GEN 1.7 Differences"]
+        T5C["Operator Manuals & Cockpit Checklists<br/>(AOC Operations Manual OM-A/B/C/D, SOPs)"]
+    end
+
+    T1 -->|Empowers Council (Art. 37/54)| T2
+    T2 -->|Elaborates Operational Detail| T3
+    T2 & T3 -->|Explains Technical Means| T4
+    T1 & T2 -->|Transposed into Sovereign Law| T5A
+    T5A -->|Published Operationally| T5B
+    T5A -->|Mandated Compliance| T5C
+    T4 -.->|Guides Standard Authoring| T5C

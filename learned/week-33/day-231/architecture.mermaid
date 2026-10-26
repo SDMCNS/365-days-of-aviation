@@ -1,0 +1,12 @@
+graph TD
+    subgraph CNS_ATM_Infrastructure["Communications, Navigation & Surveillance"]
+        COMM["Communications: VHF 8.33 kHz, CPDLC, ATN / FANS-1/A"]
+        NAV["Navigation: GNSS (GPS/Galileo), SBAS (EGNOS), DME/DME, ILS"]
+        SURV["Surveillance: Mode S, ADS-B Out 1090 MHz, WAM/MLAT, PSR"]
+        AIM["Aeronautical Info: AIP, Digital NOTAM, AIRAC Cycle, SWIM"]
+    end
+
+    AIRCRAFT["Commercial Aircraft Avionics"] <-->|VHF Voice & CPDLC| COMM
+    AIRCRAFT <-->|Position Fixes & RNP 0.3| NAV
+    AIRCRAFT -->|ADS-B Squawk & Trajectory| SURV
+    AIM -->|Navigation Database Updates| AIRCRAFT

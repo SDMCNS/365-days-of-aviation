@@ -1,0 +1,16 @@
+sequenceDiagram
+    autonumber
+    actor Dispatcher as Flight Dispatcher (OCC)
+    actor Captain as Pilot-in-Command
+    participant Nav as FMS & Navigation Database
+    participant Wx as MET Office (METAR/TAF)
+    participant Slot as Eurocontrol NM (ATFM)
+
+    Dispatcher->>Wx: Retrieve Enroute Winds & Terminal Minima
+    Wx-->>Dispatcher: TAF/SIGMET/Upper Air Temps
+    Dispatcher->>Nav: Calculate Optimal Trajectory & Cost Index
+    Nav-->>Dispatcher: Computed Flight Plan & Fuel Requirement
+    Dispatcher->>Slot: File ICAO Flight Plan & Request CTOT
+    Slot-->>Dispatcher: Acknowledged / Slot Allocated
+    Dispatcher->>Captain: Briefing Package (OFP, Mass & Balance, NOTAMs)
+    Captain->>Dispatcher: Review, Validate Fuel & Joint Operational Release

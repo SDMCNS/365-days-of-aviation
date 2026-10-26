@@ -1,0 +1,43 @@
+graph TD
+    subgraph ICAO_Governance["1. ICAO Consensus & Auditing"]
+        COUNCIL["ICAO Assembly & Council (193 Member States)"]
+        SARPS["19 Annexes: Standards & Recommended Practices"]
+        USOAP["USOAP Continuous Monitoring: 8 Critical Elements"]
+        SSC["Significant Safety Concern (SSC) Notification"]
+        
+        COUNCIL --> SARPS
+        COUNCIL --> USOAP
+        USOAP -->|Audit Failure / Unresolved Defect| SSC
+    end
+
+    subgraph Sovereign_Enforcers["2. Sovereign & Regional Enforcers"]
+        ART33["Chicago Convention Article 33: Mutual Recognition Conditioned"]
+        EU_LIST["European Commission: EU Air Safety List (Blacklist)"]
+        FAA_IASA["US FAA: IASA Category 2 Downgrade"]
+        FOREIGN_NAA["Foreign NAAs: Bilateral Permit Revocation & Ramp Arrest"]
+        
+        SSC --> ART33
+        SSC --> EU_LIST
+        SSC --> FAA_IASA
+        ART33 --> FOREIGN_NAA
+    end
+
+    subgraph Private_Markets["3. Market & Economic Discipline"]
+        INSURERS["Aviation Reinsurance (Lloyd's of London)"]
+        LESSORS["Aircraft Leasing Companies (GECAS, Avolon, AerCap)"]
+        PASSENGERS["International Travel Market"]
+        
+        EU_LIST --> INSURERS
+        FAA_IASA --> LESSORS
+        EU_LIST --> PASSENGERS
+        INSURERS -->|Hull Premiums Surge or Grounding Clause Triggered| AIRLINE
+        LESSORS -->|Default Declared & Aircraft Repossessed| AIRLINE
+    end
+
+    subgraph Airline_Impact["4. Operational Airline Grounding"]
+        AIRLINE["State Commercial Air Carriers"]
+        GROUNDED["International Route Bans & Economic Isolation"]
+        
+        AIRLINE --> GROUNDED
+        FOREIGN_NAA -->|Airspace Denial| GROUNDED
+    end

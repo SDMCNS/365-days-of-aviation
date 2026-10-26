@@ -1,0 +1,53 @@
+graph TD
+    classDef flawed fill:#991b1b,stroke:#ef4444,stroke-width:2px,color:#ffffff;
+    classDef firewall fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef operational fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef failure fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph FlawedSources["4 Pathologies of Regulatory Misapplication"]
+        P1["Pathology 1: Obsolete / Revoked Statutes<br/>• Legacy JAR-OPS 1 / Old National Rules"]:::flawed
+        P2["Pathology 2: Superseded Amendments<br/>• Missing Reg 2021/1296 Fuel Scheme"]:::flawed
+        P3["Pathology 3: Unofficial Compilations<br/>• Unverified PDFs, Training Slides, Blogs"]:::flawed
+        P4["Pathology 4: Jurisdictional Mixing<br/>• Applying FAA Part 121 to EASA Part-CAT"]:::flawed
+    end
+
+    subgraph VerificationFirewall["5-Point Quality & Currency Firewall (ORO.GEN.200)"]
+        AUTH["1. Eur-Lex Official Journal Authenticity Check"]:::firewall
+        CONS["2. Latest Consolidated Amendment Verification"]:::firewall
+        TRANS["3. Mandatory Transition Timetable Gate"]:::firewall
+        SCOPE["4. Operational Scope & Fleet Applicability Check"]:::firewall
+        LEP["5. Company Manual List of Effective Pages (LEP)"]:::firewall
+    end
+
+    subgraph ValidatedState["Validated Operational Baseline"]
+        LEGAL_OPS["Legally Dispatched Flight Release<br/>• Exact EASA Part-CAT Compliance<br/>• Complete Legal Fuel Reserves"]:::operational
+    end
+
+    subgraph FailureOutcomes["Breach & Regulatory Degradation Outcomes"]
+        SAFA_DETENTION["SAFA Ramp Check Detention & Grounding"]:::failure
+        INSURANCE_VOID["Insurance Policy Voided (AVN 1C Breach)"]:::failure
+        CRIMINAL_LIAB["Accountable Manager & Crew Liability"]:::failure
+        SAFETY_HAZARD["Direct Safety Hazard: Fuel Starvation / CFIT"]:::failure
+    end
+
+    P1 -.->|Bypasses Firewall| FailureOutcomes
+    P2 -.->|Bypasses Firewall| FailureOutcomes
+    P3 -.->|Bypasses Firewall| FailureOutcomes
+    P4 -.->|Bypasses Firewall| FailureOutcomes
+
+    P1 ==> AUTH
+    P2 ==> CONS
+    P3 ==> TRANS
+    P4 ==> SCOPE
+
+    AUTH --> LEP
+    CONS --> LEP
+    TRANS --> LEP
+    SCOPE --> LEP
+
+    LEP ==> LEGAL_OPS
+
+    FailureOutcomes --- SAFA_DETENTION
+    FailureOutcomes --- INSURANCE_VOID
+    FailureOutcomes --- CRIMINAL_LIAB
+    FailureOutcomes --- SAFETY_HAZARD

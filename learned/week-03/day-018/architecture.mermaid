@@ -1,0 +1,47 @@
+graph TD
+    subgraph Hard_Law["Tier 1: Hard Law (Directly Binding)"]
+        BASIC_REG["Regulation (EU) 2018/1139"]
+        IR["Implementing Regulations (e.g. CAT.OP.MPA.181)"]
+        SANCTIONS["Direct Statutory Finding (Level 1/2) or Prosecution"]
+        
+        BASIC_REG --> IR
+        IR -->|Non-Compliance| SANCTIONS
+    end
+
+    subgraph Certification_Specs["Tier 2: Certification Specifications (CS)"]
+        CS["EASA CS (CS-25, CS-E, CS-FTL.1)"]
+        CERT_BASIS["Aircraft Type Cert Basis / AOC Baseline"]
+        ESF["Equivalent Safety Finding (ESF)"]
+        
+        CS --> CERT_BASIS
+        CERT_BASIS -.->|Approved Deviation| ESF
+    end
+
+    subgraph Soft_Law_AMC["Tier 3: Acceptable Means of Compliance (AMC)"]
+        AMC["EASA AMC (Executive Director Decision)"]
+        CONFORMITY["Presumption of Conformity (Approved Baseline)"]
+        ALTMOC["Alternative Means of Compliance (AltMoC - ORO.GEN.120)"]
+        
+        IR --> AMC
+        AMC --> CONFORMITY
+        CONFORMITY -.->|Alternative Procedure| ALTMOC
+    end
+
+    subgraph Soft_Law_GM["Tier 4: Guidance Material (GM)"]
+        GM["EASA Guidance Material (GM)"]
+        EXPLANATORY["Explanatory / Advisory (Cannot Generate Finding Alone)"]
+        
+        AMC --> GM
+        GM --> EXPLANATORY
+    end
+
+    subgraph Internal_SOP["Tier 5: Company Procedures (SOP / OM / MOE)"]
+        OM["Operations Manual (OM-A/B/C/D)"]
+        SOP["Cockpit SOP & Checklists"]
+        EMPLOYEE_BINDING["Internally Binding on Employees (Disciplinary / License Action)"]
+        
+        CONFORMITY --> OM
+        ALTMOC --> OM
+        OM --> SOP
+        SOP --> EMPLOYEE_BINDING
+    end

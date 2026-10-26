@@ -1,0 +1,12 @@
+flowchart TD
+    METAR["METAR / TAF Weather Data"] --> DISPATCH["Flight Dispatcher & Pilot"]
+    DISPATCH --> CHECK_MIN["Check Aerodrome Operating Minima"]
+    
+    CHECK_MIN -->|Ceiling/Vis OK| NORMAL["Standard Flight Plan Execution"]
+    CHECK_MIN -->|RVR < 550m| LVO["Low Visibility Procedures (Cat II/III)"]
+    CHECK_MIN -->|Icing Conditions| DEICE["Ground De-icing & Holdover Time (HOT)"]
+    CHECK_MIN -->|Crosswind > AFM Limit| DIVERT["Operational Alternate Aerodrome"]
+    
+    DEICE --> FLIGHT["Flight Operations"]
+    LVO --> FLIGHT
+    DIVERT --> ALT_FLIGHT["Reroute to Alternate"]

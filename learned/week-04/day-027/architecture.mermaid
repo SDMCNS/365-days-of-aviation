@@ -1,0 +1,56 @@
+graph TD
+    classDef rule fill:#1e3a8a,stroke:#3b82f6,stroke-width:2px,color:#ffffff;
+    classDef org fill:#065f46,stroke:#10b981,stroke-width:2px,color:#ffffff;
+    classDef sop fill:#92400e,stroke:#f59e0b,stroke-width:2px,color:#ffffff;
+    classDef spi fill:#4c1d95,stroke:#8b5cf6,stroke-width:2px,color:#ffffff;
+    classDef evidence fill:#1f2937,stroke:#4b5563,stroke-width:2px,color:#ffffff;
+    classDef audit fill:#831843,stroke:#ec4899,stroke-width:2px,color:#ffffff;
+
+    subgraph Node1["Node 1: Statutory Requirement (Hard Law)"]
+        R1["CAT.POL.A.205 (Takeoff Perf 35ft Clearance)"]:::rule
+        R2["ORO.FTL.205 (Flight Time Limitations)"]:::rule
+        R3["Part-145.A.50 (Certificate of Release to Service)"]:::rule
+        R4["SPA.LVO.100 (Low Visibility Operations)"]:::rule
+    end
+
+    subgraph Node2["Node 2: Responsible Organisation & Postholder"]
+        NP_OPS["Nominated Person Flight Operations"]:::org
+        NP_TRAIN["Nominated Person Crew Training / Rostering"]:::org
+        CAMO_MGR["Continuing Airworthiness Postholder"]:::org
+        BASE_MGR["Part-145 Base Maintenance Manager"]:::org
+    end
+
+    subgraph Node3["Node 3: Operational Process & Frontline SOP"]
+        SOP_EFB["OM-B Section 4: Cockpit EFB Takeoff Calculation"]:::sop
+        SOP_FTL["OM-A Section 7: Rostering & Commander Discretion"]:::sop
+        SOP_CRS["MOE Chapter 2: Task Card & Dual Inspection"]:::sop
+        SOP_LVO["OM-A Section 8.4: Low Visibility Briefing & Monitored Approach"]:::sop
+    end
+
+    subgraph Node4["Node 4: Safety Objectives & Performance Metrics"]
+        SPI_OVERRUN["SPI: Tailstrike / Overrun Rate < 0.05 / 10k Sectors"]:::spi
+        SPI_FATIGUE["SPI: Commander Discretion Rate < 0.8% of Sectors"]:::spi
+        SPI_MAINT["SPI: Maintenance-Induced Turnback < 0.20 / 1k Flights"]:::spi
+        SPI_LVO["SPI: Autoland Go-Around Rate < 1.5% in CAT III"]:::spi
+    end
+
+    subgraph Node5["Node 5: Indestructible Evidence Records"]
+        REC_EFB["OFP EFB Timestamp Log (Retained 3 Months)"]:::evidence
+        REC_FTL["Digital Biometric Sign-in & Form FTL-104 to NAA"]:::evidence
+        REC_CRS["Signed Aircraft Technical Log CRS (Retained 36 Mos)"]:::evidence
+        REC_LVO["FDM Autoland Telemetry & Simulator Training Records"]:::evidence
+    end
+
+    subgraph AuditVerification["Closed-Loop Oversight Verification"]
+        OVERSIGHT["National Aviation Authority (NAA) & SMS Internal Audit"]:::audit
+    end
+
+    R1 ==> NP_OPS ==> SOP_EFB ==> SPI_OVERRUN ==> REC_EFB
+    R2 ==> NP_TRAIN ==> SOP_FTL ==> SPI_FATIGUE ==> REC_FTL
+    R3 ==> CAMO_MGR ==> SOP_CRS ==> SPI_MAINT ==> REC_CRS
+    R4 ==> NP_OPS ==> SOP_LVO ==> SPI_LVO ==> REC_LVO
+
+    REC_EFB --> OVERSIGHT
+    REC_FTL --> OVERSIGHT
+    REC_CRS --> OVERSIGHT
+    REC_LVO --> OVERSIGHT

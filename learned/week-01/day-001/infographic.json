@@ -1,0 +1,48 @@
+{
+  "title": "Day 001 \u2014 Operational Guide: What Aviation Does",
+  "day_number": 1,
+  "regulatory_anchor": "ICAO Doc 7300 & Regulation (EU) 2018/1139",
+  "operational_domain": "System of Systems, Air Transport, Commerce & Infrastructure",
+  "executive_summary": "Aviation is far more than a physical flight; it is an interconnected system of international treaties, national sovereignty, commercial investment, ground infrastructure, technical airworthiness, air traffic separation, and human operational control operating across sovereign borders and managed airspace.",
+  "kpi_metrics": [
+    {
+      "label": "Global Freight Share",
+      "value": "< 1%",
+      "subtext": "Of global freight tonnage transported by air"
+    },
+    {
+      "label": "Economic Trade Share",
+      "value": "> 35%",
+      "subtext": "Of global trade carried by air by economic value"
+    },
+    {
+      "label": "Core Stakeholders",
+      "value": "5 Domains",
+      "subtext": "Airlines, Aerodromes, ANSPs, MROs, and Ground Handlers"
+    }
+  ],
+  "pillars": [
+    {
+      "title": "High-Value Global Commerce",
+      "summary": "Facilitates just-in-time logistics, carrying high-value pharmaceuticals, electronics, perishables, and emergency spare parts."
+    },
+    {
+      "title": "Strategic Public Service",
+      "summary": "Provides sovereign lifeline connectivity, Public Service Obligations (PSO), emergency search and rescue, and disaster response."
+    },
+    {
+      "title": "National Economic Integration",
+      "summary": "Acts as an economic catalyst driving direct, indirect, and induced jobs across tourism, hospitality, and global manufacturing."
+    }
+  ],
+  "warning_box": {
+    "title": "Systemic Vulnerability Warning",
+    "description": "A flight is never an isolated technical event. Disruption in any single domain\u2014such as ANSP capacity, aerodrome closures, or regulatory non-compliance\u2014cascades rapidly through the global network."
+  },
+  "statutory_citations": [
+    "ICAO Doc 7300 (Chicago Convention)",
+    "Regulation (EU) 2018/1139 (EASA Basic Regulation)",
+    "European Regulation (EC) No 1008/2008",
+    "ICAO Annex 6, Annex 11, Annex 12, and Annex 14"
+  ]
+}

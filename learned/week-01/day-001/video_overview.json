@@ -1,0 +1,117 @@
+{
+  "title": "Day 001 \u2014 Operational Guide: What Aviation Does: Transport, Connectivity, Commerce, Public Service and National Infrastructure",
+  "day_number": 1,
+  "estimated_duration_sec": 480,
+  "segments": [
+    {
+      "segment_index": 1,
+      "segment_title": "Executive Summary & System of Systems",
+      "timestamp_start": "00:00",
+      "visual_card": "Aviation as an Interconnected System"
+    },
+    {
+      "segment_index": 2,
+      "segment_title": "Economic Value Layers and Belly Cargo",
+      "timestamp_start": "01:30",
+      "visual_card": "The Four Economic Value Layers"
+    },
+    {
+      "segment_index": 3,
+      "segment_title": "Air Connectivity Index (ACI) Mechanics",
+      "timestamp_start": "03:00",
+      "visual_card": "Weighted Air Connectivity Score Formula"
+    },
+    {
+      "segment_index": 4,
+      "segment_title": "Strategic Public Service and PSO Economics",
+      "timestamp_start": "04:30",
+      "visual_card": "Public Service Obligations (PSO)"
+    },
+    {
+      "segment_index": 5,
+      "segment_title": "Ecosystem Stakeholders & Regulatory Interface",
+      "timestamp_start": "06:00",
+      "visual_card": "AOC, ADR, and ANSP Domain Integration"
+    }
+  ],
+  "dialogue": [
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "00:00",
+      "text": "Welcome to Day 001 of Aviation 365. Today, we are breaking down what aviation actually does. Elena, most people look up and see an aluminum tube in the sky or check a ticket price. But under ICAO Doc 7300, a flight is never an isolated technical event.",
+      "visual_cue": "Display title slide for Day 001 with ICAO Chicago Convention reference."
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Co-Host",
+      "timestamp": "00:45",
+      "text": "That is right, Marcus. Civil aviation is an interconnected, highly regulated system of systems operating across sovereign borders and three-dimensional managed airspace. It is the physical manifestation of international treaties, national sovereignty, commercial investment, and ground infrastructure.",
+      "visual_cue": "Show system architecture diagram from architecture.mermaid."
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "01:30",
+      "text": "Let us talk about the economics. We look at four distinct value layers: direct, indirect, induced, and catalytic. Break down why air freight punches so far above its weight class.",
+      "visual_cue": "Graphic showing the Four Economic Value Layers of Aviation."
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Co-Host",
+      "timestamp": "02:15",
+      "text": "It is fascinating. While air transport accounts for less than 1% of global freight tonnage by physical volume, it carries over 35% of global trade by economic value. We are talking high-value pharmaceuticals, microchips, human organs, and AOG aircraft spare parts that depend on speed and temperature control.",
+      "visual_cue": "Infographic highlighting 1% volume vs 35% economic value."
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "03:00",
+      "text": "And that integration is quantified by the Air Connectivity Index, or ACI. How do we mathematically model how well an aerodrome is tied into the global network?",
+      "visual_cue": "Display mathematical formula for the Weighted Air Connectivity Score (Ci)."
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Co-Host",
+      "timestamp": "03:45",
+      "text": "The ACI formula factors in weekly flight frequency, available seat capacity, stage flight time to account for travel friction, and a destination hub multiplier. A mega hub like London Heathrow or Frankfurt carries a hub weight of 2.0, giving it exponential connectivity value compared to secondary spokes.",
+      "visual_cue": "Breakdown of the hub multipliers: Tier-1 Mega Hub (2.0), Regional Hub (1.4), Spoke (1.0)."
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "04:30",
+      "text": "Beyond commerce, aviation serves as a critical strategic public service. For island archipelagos and northern communities, it is sovereign lifeline infrastructure. When surface transport fails due to ice or weather, aviation delivers.",
+      "visual_cue": "Map showing remote island and northern regional routes."
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Co-Host",
+      "timestamp": "05:15",
+      "text": "When free-market economics fail to sustain these routes, States invoke Public Service Obligations under European Regulation EC 1008/2008 or US Essential Air Service. Governments subsidize these lifeline flights to ensure postal service, patient transport, and food security.",
+      "visual_cue": "Text overlay on Public Service Obligations (PSO) and Essential Air Service (EAS)."
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "06:00",
+      "text": "Let us tie this back to the core stakeholders. A flight only happens when AOC holders, Aerodromes under ICAO Annex 14, and ANSPs under Annex 11 synchronize their operations.",
+      "visual_cue": "Table highlighting Airlines, Aerodromes, and ANSPs and their regulatory baselines."
+    },
+    {
+      "speaker": "Dr. Elena Vance",
+      "role": "Co-Host",
+      "timestamp": "06:45",
+      "text": "Exactly. From operational flight plans and runway condition codes to en-route separation and slot allocation, every single stakeholder interface must function seamlessly.",
+      "visual_cue": "Animation showing data exchange between flight dispatch, tower control, and ramp operations."
+    },
+    {
+      "speaker": "Capt. Marcus Ross",
+      "role": "Host",
+      "timestamp": "07:30",
+      "text": "That is our foundation for the year. Remember: a flight is never an isolated technical event; it is global commerce and sovereign infrastructure in motion.",
+      "visual_cue": "Closing title screen with curriculum branding."
+    }
+  ],
+  "closing_takeaway": "Civil aviation is an intricate, highly regulated system of systems uniting global commerce, strategic public service, and sovereign infrastructure through synchronized stakeholder domains."
+}

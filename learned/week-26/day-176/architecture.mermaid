@@ -1,0 +1,18 @@
+graph LR
+    subgraph Airspace_Management["ATM & Flow Architecture"]
+        NM["Eurocontrol Network Manager (CFMU)"]
+        FUA["Flexible Use of Airspace (Civ/Mil)"]
+        FRA["Free Route Airspace (Direct Routing)"]
+    end
+
+    subgraph Control_Units["Air Traffic Control Units"]
+        ACC["Area Control Center (Enroute ACC)"]
+        APP["Terminal Approach Radar (APP)"]
+        TWR["Aerodrome Control Tower (TWR)"]
+        GND["Surface Movement Control (GND)"]
+    end
+
+    NM -->|ATFM Slots / CTOT| ACC
+    ACC -->|Radar Handoff 5 NM / FL| APP
+    APP -->|Sequenced ILS Feeder| TWR
+    TWR -->|Runway Clear / Landing| GND
